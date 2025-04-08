@@ -1,0 +1,21 @@
+/* Customizing dropdown to be dark */
+.dropdown-menu {
+    background-color: #333 !important;  /* Dark background */
+    border-radius: 5px;
+}
+.dropdown-item {
+    color: #fff !important;  /* Light text for dropdown items */
+}
+.dropdown-item:hover {
+    background-color: #555;  /* Darker shade on hover */
+}
+.card:hover{
+    transform: scale(1.01);
+}
+.card{
+    margin-left: 10rem;
+}
+#white{
+    background-color: white;
+}
+
