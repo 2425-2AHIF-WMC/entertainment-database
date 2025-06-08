@@ -1,0 +1,201 @@
+
+.btn-group:hover .dropdown-menu {
+    display: block;
+}
+.btn-group .dropdown-menu {
+    margin-top: 39px;
+}
+
+
+header {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 0 25px 0 black;
+}
+header * {
+    display: inline;
+}
+
+header li {
+    margin: 100px;
+}
+
+header li a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Menu Dropdown */
+.cf:before,
+.cf:after {
+    content: " ";
+    display: table;
+}
+
+.cf:after {
+    clear: both;
+}
+
+.cf {
+    *zoom: 1;
+}
+
+.menu,
+.submenu {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.menu {
+    margin: 50px auto;
+    width: 800px;
+    width: fit-content;
+}
+
+.menu > li {
+    backdrop-filter: grayscale(10);
+    float: left;
+    position: relative;
+    transform: skewX(25deg);
+    outline: 1px solid #ffffff;  /* or any color you like */
+    outline-offset: -2px;
+}
+
+.menu a {
+    display: block;
+    color: #fff;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.menu li:hover {
+    background: #2b2b2b;
+}
+
+.menu > li > a {
+    transform: skewX(-25deg);
+    padding: 1em 2em;
+}
+
+
+
+/* Dropdown */
+.submenu {
+    position: absolute;
+    width: 150px;
+    left: 50%; margin-left: -100px;
+    transform: skewX(-25deg);
+    transform-origin: left top;
+}
+
+.submenu li {
+    background-color: #34495e;
+    position: relative;
+    overflow: hidden;
+}
+
+.submenu > li > a {
+    padding: 1em 2em;
+}
+
+.submenu > li::after {
+    content: '';
+    position: absolute;
+    top: -125%;
+    height: 100%;
+    width: 100%;
+    box-shadow: 0 0 50px rgba(0, 0, 0, .9);
+}
+
+.submenu > li:nth-child(odd){
+    transform: skewX(-25deg) translateX(0);
+}
+
+.submenu > li:nth-child(odd) > a {
+    transform: skewX(25deg);
+}
+
+.submenu > li:nth-child(odd)::after {
+    right: -50%;
+    transform: skewX(-25deg) rotate(3deg);
+}
+
+.submenu > li:nth-child(even){
+    transform: skewX(25deg) translateX(0);
+}
+
+.submenu > li:nth-child(even) > a {
+    transform: skewX(-25deg);
+}
+
+.submenu > li:nth-child(even)::after {
+    left: -50%;
+    transform: skewX(25deg) rotate(3deg);
+}
+
+/* Show dropdown */
+.submenu,
+.submenu li {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.submenu li {
+    transition: .2s ease transform;
+}
+
+.menu > li:hover .submenu,
+.menu > li:hover .submenu li {
+    opacity: 1;
+    visibility: visible;
+}
+
+.menu > li:hover .submenu li:nth-child(even){
+    transform: skewX(25deg) translateX(15px);
+}
+
+.menu > li:hover .submenu li:nth-child(odd){
+    transform: skewX(-25deg) translateX(-15px);
+}
+/*<header>
+    <nav class="d-flex justify-content-between align-items-center px-3">
+        <ul class="menu cf ">
+            <li><a href="#"><b>Home</b></a></li>
+            <li>
+                <a href="#"><b>Services</b></a>
+                <ul class="submenu">
+                    <li><a href="#">Web design</a></li>
+                    <li><a href="#">Graphics design</a></li>
+                    <li><a href="#">App development</a></li>
+                    <li><a href="#">Marketing</a></li>
+                </ul>
+            </li>
+            <li><a href="#"><b>Blog</b></a></li>
+            <li><a href="#"><b>About us</b></a></li>
+        </ul>
+
+        <!-- Right-aligned dropdown -->
+        <div class="btn-group">
+            <button type="button" class="btn btn-outline-light " data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                ⌕
+            </button>
+            <form class="dropdown-menu p-6">
+                <nav class="navbar bg-body-tertiary">
+                    <div class="container-fluid">
+                        <form class="d-flex" role="search">
+                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
+                            <button class="btn btn-outline-success" type="submit">Search</button>
+                        </form>
+                    </div>
+                </nav>
+            </form>
+        </div>
+    </nav>
+</header>*/

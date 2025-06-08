@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buch Bewertungen</title>
+    <link rel="stylesheet" href="book.css">
+
+</head>
+<body>
+
+<header>
+    <button id="watchlistToggleBtn">Watchlist</button>
+    <div id="watchlistPanel">
+        <h2>Deine Watchlist</h2>
+        <ul id="watchlist"></ul>
+    </div>
+</header>
+
+<main>
+    <section id="books">
+    <div class="form-section">
+        <h2>Neues Buch hinzufügen</h2>
+        <input type="text" id="titelInput" placeholder="Buchtitel" required>
+        <input type="number" id="bewertungInput" placeholder="Bewertung (0-10)" min="0" max="10" step="0.1" required>
+        <input type="text" id="beschreibungInput" placeholder="Beschreibung" required>
+        <input type="text" id="bildInput" placeholder="Bild URL" required>
+        <input type="number" id="seitenInput" placeholder="Seitenanzahl" min="1" required>
+        <button id="addBuchBtn">Buch hinzufügen</button>
+    </div>
+    </section>
+    <section id="buch-list">
+        <!-- Buchkarten werden hier dynamisch eingefügt -->
+    </section>
+</main>
+
+<footer>© 2025 Buch Bewertungen Demo</footer>
+
+<script src="books.js"></script>
+</body>
+</html>

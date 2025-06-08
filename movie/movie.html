@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Film Bewertungen</title>
+    <link rel="stylesheet" href="style_movie.css">
+
+</head>
+<body>
+
+<header>
+    <button id="watchlistToggleBtn">Watchlist</button>
+    <div id="watchlistPanel">
+        <h2>Deine Watchlist</h2>
+        <ul id="watchlist"></ul>
+    </div>
+</header>
+
+<main>
+    <section id="movie-container">
+    <div class="form-section">
+        <h2>Neuen Film hinzufügen</h2>
+        <input type="text" id="titelInput" placeholder="Filmtitel" required>
+        <input type="number" id="bewertungInput" placeholder="Bewertung (0-10)" min="0" max="10" step="0.1" required>
+        <input type="text" id="beschreibungInput" placeholder="Beschreibung" required>
+        <input type="text" id="bildInput" placeholder="Bild URL" required>
+        <input type="number" id="dauerInput" placeholder="Dauer (Minuten)" min="1" required>
+        <button id="addFilmBtn">Film hinzufügen</button>
+    </div>
+    </section>
+    <section id="film-list">
+        <!-- Filmkarten werden hier dynamisch eingefügt -->
+    </section>
+</main>
+
+<footer>© 2025 Film Bewertungen Demo</footer>
+<script src="movie.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,159 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+header {
+    background: #333;
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+#watchlistToggleBtn {
+    background: #ff5722;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    margin-top: 1rem;
+}
+#watchlistPanel {
+    display: none;
+    position: absolute;
+    right: 20px;
+    top: 60px;
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 1rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+main {
+    padding: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+}
+.card {
+    text-align: center;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 250px;
+    overflow: hidden;
+    transition: transform 0.3s;
+}
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 15px rgb(6, 11, 6);
+}
+.card img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+}
+.card-content {
+    padding: 1rem;
+}
+.card-title {
+    font-size: 1.2rem;
+    margin: 0.5rem 0;
+}
+.card-rating {
+    font-weight: bold;
+    color: #ff5722;
+}
+.card-pages {
+    font-size: 0.9rem;
+    color: black;
+}
+.card-description {
+    font-size: 0.9rem;
+    margin: 0.5rem 0;
+}
+.add-watchlist-btn {
+    background: #ff5722;
+    color: white;
+    border: none;
+    padding: 0.5rem;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 1rem;
+}
+.add-watchlist-btn:hover {
+    background: black;
+}
+#watchlist {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.watchlist-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #ccc;
+}
+.remove-btn {
+    background: transparent;
+    border: none;
+    color: #ff5722;
+    cursor: pointer;
+}
+.form-section {
+    margin: 2rem -1rem;
+    padding: 2rem;
+    text-align: left;
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 2px 5px rgb(6, 11, 6);
+    width: 100%;
+    max-width: 600px;
+    max-height: 400px;
+    display: block;
+
+}
+.form-section input, .form-section button {
+    width: 100%;
+    padding: 0.5rem;
+    margin: 0.5rem 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.stars {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+}
+.star {
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    fill: #d1d5db;
+    transition: fill 0.3s ease;
+}
+.star.selected {
+    fill: black;
+}
+#serie-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(280px,1fr));
+    padding-top: 0;
+}
+#serienHinzufügen{
+
+    padding-bottom: 2rem;
+}
+section {
+    max-width: 1200px;    /* zentrierte Containerbreite */
+    margin: 0 auto;       /* zentriert im Browserfenster */
+    padding-top: 4rem;    /* großzügiger Abstand oben (z.B. pt-16 aus Guidelines) */
+    padding-bottom: 5rem; /* großzügiger Abstand unten (pb-20) */
+}

@@ -1,0 +1,148 @@
+{
+  "filme": [
+    {
+      "id": 1,
+      "titel": "Inception",
+      "bewertung": 8.8,
+      "beschreibung": "Ein Traum im Traum. Ein Meisterwerk von Christopher Nolan, das mit ausgeklügelter Handlung fasziniert.",
+      "bild": "https://th.bing.com/th/id/R.69344c61a4a6d287887154402b6ec44c?rik=NSh%2fkMDTJYJN9Q&riu=http%3a%2f%2fimages2.fanpop.com%2fimage%2fphotos%2f14300000%2fInception-inception-2010-14355479-1680-1050.jpg&ehk=d15hpS8Rply6BEkzuLI%2fbahZQFk5IL8MKCn8JQSGv5I%3d&risl=&pid=ImgRaw&r=0",
+      "dauer": 47,
+      "userRating": 0
+    },
+    {
+      "id": 2,
+      "titel": "The Shawshank Redemption",
+      "bewertung": 9.3,
+      "beschreibung": "Ein episches Drama über Hoffnung und Freundschaft im Gefängnis Shawshank.",
+      "bild": "https://image.tmdb.org/t/p/w500/q6y0Go1tsGEsmtFryDOJo3dEmqu.jpg",
+      "dauer": 47,
+      "userRating": 0
+    },
+    {
+      "id": 3,
+      "titel": "The Dark Knight",
+      "bewertung": 9,
+      "beschreibung": "Der dunkle Ritter stellt sich dem Chaos in Gotham - mit brillantem Heath Ledger als Joker.",
+      "bild": "https://image.tmdb.org/t/p/w500/1hRoyzDtpgMU7Dz4JF22RANzQO7.jpg",
+      "dauer": 47,
+      "userRating": 0
+    },
+    {
+      "id": 4,
+      "titel": "Parasite",
+      "bewertung": 8.6,
+      "beschreibung": "Ein Süd-Koreanischer Thriller über Klassenunterschiede der besonderen Art.",
+      "bild": "https://image.tmdb.org/t/p/w500/7IiTTgloJzvGI1TAYymCfbfl3vT.jpg",
+      "dauer": 47,
+      "userRating": 0
+    },
+    {
+      "id": 5,
+      "titel": "Interstellar",
+      "bewertung": 8.6,
+      "beschreibung": "Episches Sci-Fi-Drama über eine Reise durch Raum und Zeit, um die Menschheit zu retten.",
+      "bild": "https://image.tmdb.org/t/p/w500/rAiYTfKGqDCRIIqo664sY9XZIvQ.jpg",
+      "dauer": 47,
+      "userRating": 0
+    }
+  ],
+  "buecher": [
+    {
+      "id": "a1",
+      "titel": "Der Alchimist",
+      "bewertung": 8.5,
+      "beschreibung": "Ein philosophisches Buch von Paulo Coelho über die Suche nach dem eigenen Glück.",
+      "bild": "https://images-na.ssl-images-amazon.com/images/I/71aFt4+OTOL.jpg",
+      "seiten": 200,
+      "userRating": 0
+    },
+    {
+      "id": "a2",
+      "titel": "1984",
+      "bewertung": 9,
+      "beschreibung": "George Orwells dystopischer Roman über totalitäre Überwachung.",
+      "bild": "https://images-na.ssl-images-amazon.com/images/I/81WcnNQ-TBL.jpg",
+      "seiten": 200,
+      "userRating": 0
+    },
+    {
+      "id": "a3",
+      "titel": "Der Herr der Ringe",
+      "bewertung": 9.5,
+      "beschreibung": "Das epische Fantasy-Abenteuer von J.R.R. Tolkien.",
+      "bild": "https://images-na.ssl-images-amazon.com/images/I/91dSMhdIzTL.jpg",
+      "seiten": 200,
+      "userRating": 0
+    },
+    {
+      "id": "a4",
+      "titel": "Siddhartha",
+      "bewertung": 8.2,
+      "beschreibung": "Ein spiritueller Roman von Hermann Hesse.",
+      "bild": "https://images-na.ssl-images-amazon.com/images/I/81Au2daGvjL.jpg",
+      "seiten": 200,
+      "userRating": 0
+    }
+  ],
+  "serien": [
+    {
+      "id": "s1",
+      "titel": "Breaking Bad",
+      "bewertung": 9.5,
+      "beschreibung": "Ein Chemielehrer wird zum Meth-Koch in dieser preisgekrönten Drama-Serie.",
+      "bild": "https://upload.wikimedia.org/wikipedia/en/6/61/Breaking_Bad_title_card.png",
+      "staffeln": 5,
+      "userRating": 0
+    },
+    {
+      "id": "s2",
+      "titel": "Game of Thrones",
+      "bewertung": 9.3,
+      "beschreibung": "Episches Fantasy-Drama um Machtkämpfe in den sieben Königreichen.",
+      "bild": "https://upload.wikimedia.org/wikipedia/en/d/d8/Game_of_Thrones_title_card.jpg",
+      "staffeln": 8,
+      "userRating": 0
+    },
+    {
+      "id": "s3",
+      "titel": "Stranger Things",
+      "bewertung": 8.8,
+      "beschreibung": "Mysteriöse Abenteuer und das Übernatürliche in einer Kleinstadt der 80er.",
+      "bild": "https://upload.wikimedia.org/wikipedia/en/f/f7/Stranger_Things_season_4.jpg",
+      "staffeln": 4,
+      "userRating": 0
+    }
+  ],
+  "users": [
+    {
+      "id": "u1",
+      "username": "elena",
+      "email": "elena@mayer.or.at",
+      "password": "123423123123",
+      "userRatings": {
+        "filme": {},
+        "buecher": {},
+        "serien": {}
+      },
+      "watchlist": [
+        "shawshank",
+        "darkknight"
+      ]
+    },
+    {
+      "id": "u2",
+      "username": "user2",
+      "email": "user2@example.com",
+      "password": "password",
+      "userRatings": {
+        "filme": {},
+        "buecher": {},
+        "serien": {}
+      },
+      "watchlist": [
+        "shawshank",
+        "darkknight"
+      ]
+    }
+    ]
+}
