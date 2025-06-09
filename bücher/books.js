@@ -31,32 +31,38 @@ const defaultBuecher = [
 let buecher = [...defaultBuecher];
 let watchlist = JSON.parse(localStorage.getItem('watchlist')) || [];
 
+// Funktion zum Rendern der Bücher
 function renderBuecher() {
     const buchList = document.getElementById('buch-list');
     buchList.innerHTML = '';
     buecher.forEach(buch => {
-        const card = document.createElement('div');
-        card.className = 'card';
-        card.innerHTML = `
-                <img src="${buch.bild}" alt="${buch.titel}">
-                <div class="card-content">
-                    <h3 class="card-title">${buch.titel}</h3>
-                    <p class="card-rating">Bewertung: ${buch.bewertung} ⭐</p>
-                    <p class="card-pages">Seiten: ${buch.seiten}</p>
-                    <p class="card-description">${buch.beschreibung}</p>
-                    <p>Deine Bewertung: </p>
-                    <div class="stars" data-id="${buch.id}">
-                        ${[1, 2, 3, 4, 5].map(i => `
-                            <svg class="star ${buch.userRating >= i ? 'selected' : ''}" data-value="${i}" viewBox="0 0 20 20">
-                                <path d="M9.049 2.927c.3-.920 1.603-.920 1.902 0l1.286 3.966a1 1 0 00.95.690h4.175c.969 0 1.371 1.24.588 1.810l-3.380 2.455a1 1 0 00-.364 1.118l1.287 3.966c.300.921-.755 1.688-1.540 1.118l-3.380-2.455a1 1 0 00-1.175 0l-3.380 2.455c-.784.570-1.838-.197-1.540-1.118l1.287-3.966a1 1 0 00-.364-1.118L2.340 9.393c-.783-.570-.380-1.810.588-1.810h4.175a1 1 0 00.950-.690l1.286-3.967z"/>
-                            </svg>
-                        `).join('')}
-                    </div>
-                    <button class="add-watchlist-btn" data-id="${buch.id}">${watchlist.includes(buch.id) ? 'Von Watchlist entfernen' : 'Zur Watchlist hinzufügen'}</button>
-                </div>
-            `;
+        const card = createBuchCard(buch);
         buchList.appendChild(card);
     });
+}
+// Funktion zum Erstellen einer Buchkarte
+function createBuchCard(buch) {
+    const card = document.createElement('div');
+    card.className = 'card';
+    card.innerHTML = `
+        <img src="${buch.bild}" alt="${buch.titel}">
+        <div class="card-content">
+            <h3 class="card-title">${buch.titel}</h3>
+            <p class="card-rating">Bewertung: ${buch.bewertung} ⭐</p>
+            <p class="card-pages">Seiten: ${buch.seiten}</p>
+            <p class="card-description">${buch.beschreibung}</p>
+            <p>Deine Bewertung: </p>
+            <div class="stars" data-id="${buch.id}">
+                ${[1, 2, 3, 4, 5].map(i => `
+                    <svg class="star ${buch.userRating >= i ? 'selected' : ''}" data-value="${i}" viewBox="0 0 20 20">
+                        <path d="M9.049 2.927c.3-.920 1.603-.920 1.902 0l1.286 3.966a1 1 0 00.95.690h4.175c.969 0 1.371 1.24.588 1.810l-3.380 2.455a1 1 0 00-.364 1.118l1.287 3.966c.300.921-.755 1.688-1.540 1.118l-3.380-2.455a1 1 0 00-1.175 0l-3.380 2.455c-.784.570-1.838-.197-1.540-1.118l1.287-3.966a1 1 0 00-.364-1.118L2.340 9.393c-.783-.570-.380-1.810.588-1.810h4.175a1 1 0 00.950-.690l1.286-3.967z"/>
+                    </svg>
+                `).join('')}
+            </div>
+            <button class="add-watchlist-btn" data-id="${buch.id}">${watchlist.includes(buch.id) ? 'Von Watchlist entfernen' : 'Zur Watchlist hinzufügen'}</button>
+        </div>
+    `;
+    return card;
 }
 
 function renderWatchlist() {
@@ -158,10 +164,38 @@ document.getElementById('addBuchBtn').addEventListener('click', () => {
     }
 });
 
+// Suchfunktion
+const searchInput = document.getElementById('searchInput');
+
+// Event-Listener für die Suche
+searchInput.addEventListener('input', (e) => {
+    const query = e.target.value.trim().toLowerCase();
+    filterAndRender(query);
+    // Blende das Formular aus, wenn der Benutzer mit dem Tippen beginnt
+    const formSection = document.getElementById('form-section');
+    formSection.style.display = query ? 'none' : 'block';
+});
+
+// Funktion zum Filtern und Rendern der Suchergebnisse
+function filterAndRender(query) {
+    const buchList = document.getElementById('buch-list');
+    buchList.innerHTML = ''; // Leere die Buch-Liste
+    const filteredBooks = buecher.filter(buch => buch.titel.toLowerCase().includes(query));
+
+    if (filteredBooks.length === 0) {
+        buchList.innerHTML = '<p>Keine Ergebnisse gefunden.</p>';
+        return;
+    }
+
+    filteredBooks.forEach(buch => {
+        const card = createBuchCard(buch);
+        buchList.appendChild(card);
+    });
+}
 // Initial render
 renderBuecher();
 renderWatchlist();
 
 
 
-    
+

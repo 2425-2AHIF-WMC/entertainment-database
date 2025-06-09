@@ -10,12 +10,63 @@
 <body>
 
 <header>
-    <button id="watchlistToggleBtn">Watchlist</button>
-    <div id="watchlistPanel">
-        <h2>Deine Watchlist</h2>
-        <ul id="watchlist"></ul>
-    </div>
+    <nav>
+        <div class="nav-left">
+            <div class="logo">EntertainHub</div>
+            <div class="entertainment-text">Your Gateway to Endless Entertainment</div>
+        </div>
+
+        <ul class="menu cf">
+            <li><a href="../index.html"><b>Home</b></a></li>
+            <li><a href="https://www.rottentomatoes.com/" target="_blank" rel="noopener noreferrer"><b>Rotten Tomatoes</b></a></li>
+            <li><a href="https://www.imdb.com/de/" target="_blank" rel="noopener noreferrer"><b>IMDB</b></a></li>
+            <li><a href="#contact"><b>About us</b></a></li>
+            <li><a href="/search/search.html"><b>search</b></a></li>
+        </ul>
+
+        <section id="search-section">
+            <input type="text" id="searchInput" placeholder="Suche" />
+        </section>
+
+        <!-- Move watchlist outside the menu -->
+        <div class="watchlist-container">
+            <button id="watchlistToggleBtn">Watchlist</button>
+            <div id="watchlistPanel">
+                <h2>Deine Watchlist</h2>
+                <ul id="watchlist"></ul>
+            </div>
+        </div>
+
+
+
+        <div class="nav-right">
+            <div class="search-login-container">
+                <div class="search-container">
+                </div>
+
+                <div class="login-container">
+                    <button class="login-btn" id="loginBtn">
+                        <i class="fas fa-user"></i>
+                        <span>Login</span>
+                    </button>
+
+                    <div class="user-info" id="userInfo" style="display: none;">
+                        <div class="user-avatar" id="userAvatar">U</div>
+                        <span id="user-id">User</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+
+                    <div class="user-dropdown" id="userDropdown">
+                        <a href="#" id="profileLink"><i class="fas fa-user"></i> Profile</a>
+                        <a href="#" id="watchlistLink"><i class="fas fa-cog"></i> WatchList</a>
+                        <a href="#" id="logoutLink"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
 </header>
+
 
 <main>
     <section id="books">

@@ -1,4 +1,5 @@
 ﻿<!DOCTYPE html>
+<<<<<<< HEAD
 <html lang="de" >
 <head>
     <meta charset="UTF-8" />
@@ -240,5 +241,69 @@
         filterAndRender(searchInput.value);
     });
 </script>
+=======
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>$Title$</title>
+</head>
+<body>
+$END$
+>>>>>>> 3b1ff4e51eecfc3f425dcbd0dce3dfcf9ae19435
 </body>
 </html>
+
+
+
+// Login function
+async function login(username, email, password) {
+try {
+const users = await apiRequest('/users');
+if (isLoginMode) {
+const user = users.find(u => (u.username === username || u.email === email) && u.password === password);
+if (!user) {
+showAlert('Invalid credentials', 'error');
+return false;
+}
+currentUser  = user;
+console.log('User  logged in:', currentUser .username);
+} else {
+const existingUser  = users.find(u => u.username === username || u.email === email);
+if (existingUser ) {
+showAlert('Username or email already exists', 'error');
+return false;
+}
+
+const maxId = users.length > 0 ? Math.max(...users.map(u => parseInt(u.id.replace('u', '')))) : 0;
+const newUserId = `u${maxId + 1}`;
+
+const newUser  = {
+id: newUserId,
+username: username,
+email: email,
+password: password, // In production, this should be hashed
+userRatings: {
+filme: {},
+buecher: {},
+serien: {}
+}
+};
+
+const createdUser  = await apiRequest('/users', 'POST', newUser );
+currentUser  = createdUser ;
+console.log('New user registered:', newUser );
+console.log('Total users in database:', users.length + 1);
+}
+
+updateUIForLoggedInUser ();
+saveCurrentUser ();
+loginModal.classList.remove('show');
+authForm.reset();
+return true;
+} catch (error) {
+console.error('Login/Register error:', error);
+showAlert('Connection error. Please try again.', 'error');
+return false;
+}
+}
+

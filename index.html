@@ -711,6 +711,133 @@
       max-height: 100rem;
 
     }
+    .bubble-container {
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .bubble {
+      position: absolute;
+      background: rgba(255, 255, 255, 0.6);
+      border-radius: 50%;
+      animation: float 15s infinite linear;
+      backdrop-filter: blur(2px);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+
+    .bubble:nth-child(1) {
+      width: 20px;
+      height: 20px;
+      left: 10%;
+      animation-duration: 12s;
+      animation-delay: 0s;
+    }
+
+    .bubble:nth-child(2) {
+      width: 35px;
+      height: 35px;
+      left: 20%;
+      animation-duration: 16s;
+      animation-delay: 2s;
+    }
+
+    .bubble:nth-child(3) {
+      width: 15px;
+      height: 15px;
+      left: 35%;
+      animation-duration: 10s;
+      animation-delay: 1s;
+    }
+
+    .bubble:nth-child(4) {
+      width: 45px;
+      height: 45px;
+      left: 50%;
+      animation-duration: 18s;
+      animation-delay: 3s;
+    }
+
+    .bubble:nth-child(5) {
+      width: 25px;
+      height: 25px;
+      left: 70%;
+      animation-duration: 14s;
+      animation-delay: 1.5s;
+    }
+
+    .bubble:nth-child(6) {
+      width: 30px;
+      height: 30px;
+      left: 80%;
+      animation-duration: 11s;
+      animation-delay: 4s;
+    }
+
+    .bubble:nth-child(7) {
+      width: 18px;
+      height: 18px;
+      left: 90%;
+      animation-duration: 13s;
+      animation-delay: 0.5s;
+    }
+
+    .bubble:nth-child(8) {
+      width: 40px;
+      height: 40px;
+      left: 5%;
+      animation-duration: 17s;
+      animation-delay: 2.5s;
+    }
+
+    .bubble:nth-child(9) {
+      width: 22px;
+      height: 22px;
+      left: 65%;
+      animation-duration: 15s;
+      animation-delay: 1.8s;
+    }
+
+    .bubble:nth-child(10) {
+      width: 28px;
+      height: 28px;
+      left: 45%;
+      animation-duration: 12s;
+      animation-delay: 3.2s;
+    }
+
+    @keyframes float {
+      0% {
+        opacity: 0;
+        transform: translateY(100vh) translateX(0px) rotate(0deg);
+      }
+      10% {
+        opacity: 1;
+      }
+      90% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0;
+        transform: translateY(-100px) translateX(50px) rotate(360deg);
+      }
+    }
+    .hero-content {
+      z-index: 2;
+      position: relative;
+      text-align: center; /* Center the text */
+      display: flex; /* Ensure flexbox is used */
+      flex-direction: column; /* Stack items vertically */
+      align-items: center; /* Center items horizontally */
+      justify-content: center; /* Center items vertically */
+    }
+    #child{
+      display: flex;
+      color: initial;
+      margin-left: 45rem;
+    }
   </style>
 </head>
 <body>
@@ -797,9 +924,21 @@
 </div>
 
 <section class="hero-section" id="home">
-  <div class="hero-content">
+  <div class="hero-content" id="child">
     <h1 class="hero-title">Welcome to Your Universe</h1>
     <p class="hero-subtitle">Discover Amazing Series, Movies & Books</p>
+  </div>
+  <div class="bubble-container" id="bubbles">
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
   </div>
 </section>
 
@@ -846,7 +985,14 @@
     </div>
   </div>
 </section>
-
+<div class="bs">
+  <p class="hero-subtitle" id="bs" style="display: flex; justify-content: center; color: white; padding: 3rem; font-size: 3rem;"><b>
+    Willkommen zu deinem ultimativen Ziel für die Erkundung des riesigen Entertainment-Universums.
+  </b></p>
+  <p style="display: flex; justify-content: center; color: white; padding-left: 2rem;"><b>Von preisgekrönten Dramen zu versteckten Indie-Perlen, von Bestseller-Romanen zu Underground-Graphic-Novels, von sehenswürdigen Dokumentationen zu Guilty-Pleasure-Shows– wir feiern jede Ecke der Entertainment-Industrie. Deine Meinungen sind wichtig. Bewerte deine Lieblingsfilme, ranke Serien, die dich nachts wachgehalten haben und rezensiere Bücher, die deine Sichtweise verändert haben.
+    Ob du ein Gelegenheitszuschauer, eine hingebungsvolle Leseratte oder ein Entertainment-Kenner bist – deine Perspektive bereichert unsere Community. Erstelle Watch- und Leselisten, teil deine Meinung und verbessere unsere Website mit deiner Einzigartigkeit. Der nächste Krimi, die nächste Liebesgeschichte oder eine spannende Dokumentation warten nur darauf von dir erkundet zu werden.
+  </b></p>
+</div>
 <footer id="contact">
   <div class="footer-content">
     <div class="footer-section">
@@ -860,13 +1006,17 @@
       </div>
     </div>
 
-    <div class="footer-section">
+    <div class="footer-section" style="margin:auto;">
       <h3>Quick Links</h3>
-      <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="serie/serien.html">Series</a></li>
-        <li><a href="movie/movie.html">Movies</a></li>
-        <li><a href="bücher/books.html">Books</a></li>
+      <ul style="text-align: center;">
+        <p style="justify-content: center;">
+
+          <li><a href="#home">Home</a></li>
+          <li><a href="serie/serien.html">Series</a></li>
+          <li><a href="movie/movie.html">Movies</a></li>
+          <li><a href="bücher/books.html">Books</a></li>
+
+        </p>
       </ul>
     </div>
 
@@ -884,455 +1034,481 @@
 </footer>
 
 
-<script>// User authentication state
-let currentUser  = null;
-let isLoginMode = true;
-let appData = null;
 
-// API Base URL
-const API_BASE = 'http://localhost:3000';
+<script>
+  // Optional: Add more bubbles dynamically
+  function createBubble() {
+    const bubble = document.createElement('div');
+    bubble.classList.add('bubble');
 
-// DOM elements
-const loginBtn = document.getElementById('loginBtn');
-const userInfo = document.getElementById('userInfo');
-const userAvatar = document.getElementById('userAvatar');
-const userName = document.getElementById('userName');
-const loginModal = document.getElementById('loginModal');
-const closeModal = document.getElementById('closeModal');
-const authForm = document.getElementById('authForm');
-const formTitle = document.getElementById('formTitle');
-const submitBtn = document.getElementById('submitBtn');
-const toggleAuthBtn = document.getElementById('toggleAuthBtn');
-const authToggle = document.getElementById('authToggle');
-const userDropdown = document.getElementById('userDropdown');
-const logoutLink = document.getElementById('logoutLink');
-const resultsContainer = document.getElementById('results'); // Container für Suchergebnisse
-const searchInput = document.querySelector('.search-input'); // Suchfeld
+    const size = Math.random() * 30 + 15; // Random size between 15-45px
+    bubble.style.width = size + 'px';
+    bubble.style.height = size + 'px';
+    bubble.style.left = Math.random() * 100 + '%';
+    bubble.style.animationDuration = (Math.random() * 8 + 10) + 's'; // Random duration 10-18s
+    bubble.style.animationDelay = Math.random() * 5 + 's';
 
-// API Helper Functions
-async function apiRequest(endpoint, method = 'GET', data = null) {
-  const config = {
-    method,
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    ...(data && { body: JSON.stringify(data) }) // Bedingte Zuweisung
-  };
+    document.querySelector('.bubble-container').appendChild(bubble);
 
-  try {
-    const response = await fetch(`${API_BASE}${endpoint}`, config);
-    if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
-    return await response.json();
-  } catch (error) {
-    console.error('API Request failed:', error);
-    throw error;
+    // Remove bubble after animation
+    setTimeout(() => {
+      bubble.remove();
+    }, 20000);
   }
-}
 
-// Load data from API
-async function loadAppData() {
-  try {
-    console.log('Loading data from API...');
-    const [filme, buecher, serien, users] = await Promise.all([
-      apiRequest('/filme'),
-      apiRequest('/buecher'),
-      apiRequest('/serien'),
-      apiRequest('/users')
-    ]);
+  // Create new bubbles every few seconds
+  setInterval(createBubble, 3000);
+  let currentUser  = null;
+  let isLoginMode = true;
+  let appData = null;
 
-    appData = { filme, buecher, serien, users };
-    console.log('Database loaded from API');
-    console.log('Users found:', users.length);
-  } catch (error) {
-    console.error('Error loading database:', error);
-    showAlert('Failed to load data from server', 'error');
-  }
-}
+  // API Base URL
+  const API_BASE = 'http://localhost:3000';
 
-// Check if user is logged in from localStorage
-function checkStoredLogin() {
-  const storedUser  = localStorage.getItem('entertainhub_current_user');
-  if (storedUser ) {
+  // DOM elements
+  const loginBtn = document.getElementById('loginBtn');
+  const userInfo = document.getElementById('userInfo');
+  const userAvatar = document.getElementById('userAvatar');
+  const userName = document.getElementById('userName');
+  const loginModal = document.getElementById('loginModal');
+  const closeModal = document.getElementById('closeModal');
+  const authForm = document.getElementById('authForm');
+  const formTitle = document.getElementById('formTitle');
+  const submitBtn = document.getElementById('submitBtn');
+  const toggleAuthBtn = document.getElementById('toggleAuthBtn');
+  const authToggle = document.getElementById('authToggle');
+  const userDropdown = document.getElementById('userDropdown');
+  const logoutLink = document.getElementById('logoutLink');
+  const resultsContainer = document.getElementById('results'); // Container für Suchergebnisse
+  const searchInput = document.querySelector('.search-input'); // Suchfeld
+
+  // API Helper Functions
+  async function apiRequest(endpoint, method = 'GET', data = null) {
+    const config = {
+      method,
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      ...(data && { body: JSON.stringify(data) }) // Bedingte Zuweisung
+    };
+
     try {
-      currentUser  = JSON.parse(storedUser );
-      updateUIForLoggedInUser ();
-      return true;
+      const response = await fetch(`${API_BASE}${endpoint}`, config);
+      if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+      return await response.json();
     } catch (error) {
-      console.error('Error parsing stored user:', error);
-      localStorage.removeItem('entertainhub_current_user');
+      console.error('API Request failed:', error);
+      throw error;
     }
   }
-  return false;
-}
 
-// Save current user to localStorage
-function saveCurrentUser () {
-  if (currentUser ) {
-    localStorage.setItem('entertainhub_current_user', JSON.stringify(currentUser ));
-  }
-}
+  // Load data from API
+  async function loadAppData() {
+    try {
+      console.log('Loading data from API...');
+      const [filme, buecher, serien, users] = await Promise.all([
+        apiRequest('/filme'),
+        apiRequest('/buecher'),
+        apiRequest('/serien'),
+        apiRequest('/users')
+      ]);
 
-// Clear current user from localStorage
-function clearCurrentUser () {
-  localStorage.removeItem('entertainhub_current_user');
-}
-
-// Update UI when user is logged in
-function updateUIForLoggedInUser () {
-  loginBtn.style.display = 'none';
-  userInfo.style.display = 'flex';
-  userName.textContent = currentUser .username;
-  userAvatar.textContent = currentUser .username.charAt(0).toUpperCase();
-}
-
-// Show login modal
-loginBtn.addEventListener('click', () => {
-  loginModal.classList.add('show');
-});
-
-// Close modal
-closeModal.addEventListener('click', () => {
-  loginModal.classList.remove('show');
-});
-
-// Close modal when clicking outside
-loginModal.addEventListener('click', (e) => {
-  if (e.target === loginModal) {
-    loginModal.classList.remove('show');
-  }
-});
-
-// Toggle between login and register
-toggleAuthBtn.addEventListener('click', () => {
-  isLoginMode = !isLoginMode;
-  updateFormMode();
-});
-
-// Also toggle when clicking the auth toggle text
-authToggle.addEventListener('click', () => {
-  isLoginMode = !isLoginMode;
-  updateFormMode();
-});
-
-// Update form mode
-function updateFormMode() {
-  if (isLoginMode) {
-    formTitle.textContent = 'Login';
-    submitBtn.textContent = 'Login';
-    toggleAuthBtn.textContent = 'Register';
-    authToggle.innerHTML = 'Don\'t have an account? <span style="color: #00d4ff;">Register here</span>';
-  } else {
-    formTitle.textContent = 'Register';
-    submitBtn.textContent = 'Register';
-    toggleAuthBtn.textContent = 'Login';
-    authToggle.innerHTML = 'Already have an account? <span style="color: #00d4ff;">Login here</span>';
-  }
-}
-
-// Login function
-async function login(username, email, password) {
-  try {
-    const users = await apiRequest('/users');
-    if (isLoginMode) {
-      const user = users.find(u => (u.username === username || u.email === email) && u.password === password);
-      if (!user) {
-        showAlert('Invalid credentials', 'error');
-        return false;
-      }
-      currentUser  = user;
-      console.log('User  logged in:', currentUser .username);
-    } else {
-      const existingUser  = users.find(u => u.username === username || u.email === email);
-      if (existingUser ) {
-        showAlert('Username or email already exists', 'error');
-        return false;
-      }
-
-      const maxId = users.length > 0 ? Math.max(...users.map(u => parseInt(u.id.replace('u', '')))) : 0;
-      const newUserId = `u${maxId + 1}`;
-
-      const newUser  = {
-        id: newUserId,
-        username: username,
-        email: email,
-        password: password, // In production, this should be hashed
-        userRatings: {
-          filme: {},
-          buecher: {},
-          serien: {}
-        }
-      };
-
-      const createdUser  = await apiRequest('/users', 'POST', newUser );
-      currentUser  = createdUser ;
-      console.log('New user registered:', newUser );
-      console.log('Total users in database:', users.length + 1);
+      appData = { filme, buecher, serien, users };
+      console.log('Database loaded from API');
+      console.log('Users found:', users.length);
+    } catch (error) {
+      console.error('Error loading database:', error);
+      showAlert('Failed to load data from server', 'error');
     }
+  }
 
-    updateUIForLoggedInUser ();
-    saveCurrentUser ();
-    loginModal.classList.remove('show');
-    authForm.reset();
-    return true;
-  } catch (error) {
-    console.error('Login/Register error:', error);
-    showAlert('Connection error. Please try again.', 'error');
+  // Check if user is logged in from localStorage
+  function checkStoredLogin() {
+    const storedUser  = localStorage.getItem('entertainhub_current_user');
+    if (storedUser ) {
+      try {
+        currentUser  = JSON.parse(storedUser );
+        updateUIForLoggedInUser ();
+        return true;
+      } catch (error) {
+        console.error('Error parsing stored user:', error);
+        localStorage.removeItem('entertainhub_current_user');
+      }
+    }
     return false;
   }
-}
 
-// Handle form submission
-authForm.addEventListener('submit', async (e) => {
-  e.preventDefault();
-
-  const username = document.getElementById('username').value.trim();
-  const email = document.getElementById('email').value.trim();
-  const password = document.getElementById('password').value.trim();
-
-  if (!username || !email || !password) {
-    showAlert('Please fill in all fields', 'error');
-    return;
+  // Save current user to localStorage
+  function saveCurrentUser () {
+    if (currentUser ) {
+      localStorage.setItem('entertainhub_current_user', JSON.stringify(currentUser ));
+    }
   }
 
-  if (password.length < 6) {
-    showAlert('Password must be at least 6 characters', 'error');
-    return;
+  // Clear current user from localStorage
+  function clearCurrentUser () {
+    localStorage.removeItem('entertainhub_current_user');
   }
 
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  if (!emailRegex.test(email)) {
-    showAlert('Please enter a valid email address', 'error');
-    return;
+  // Update UI when user is logged in
+  function updateUIForLoggedInUser () {
+    loginBtn.style.display = 'none';
+    userInfo.style.display = 'flex';
+    userName.textContent = currentUser .username;
+    userAvatar.textContent = currentUser .username.charAt(0).toUpperCase();
   }
 
-  submitBtn.disabled = true;
-  submitBtn.textContent = isLoginMode ? 'Logging in...' : 'Registering...';
+  // Show login modal
+  loginBtn.addEventListener('click', () => {
+    loginModal.classList.add('show');
+  });
 
-  const success = await login(username, email, password);
+  // Close modal
+  closeModal.addEventListener('click', () => {
+    loginModal.classList.remove('show');
+  });
 
-  submitBtn.disabled = false;
-  submitBtn.textContent = isLoginMode ? 'Login' : 'Register';
+  // Close modal when clicking outside
+  loginModal.addEventListener('click', (e) => {
+    if (e.target === loginModal) {
+      loginModal.classList.remove('show');
+    }
+  });
 
-  if (success) {
-    const message = isLoginMode ? 'Login successful!' : 'Registration successful! User saved to database.';
-    showAlert(message, 'success');
+  // Toggle between login and register
+  toggleAuthBtn.addEventListener('click', () => {
+    isLoginMode = !isLoginMode;
+    updateFormMode();
+  });
+
+  // Also toggle when clicking the auth toggle text
+  authToggle.addEventListener('click', () => {
+    isLoginMode = !isLoginMode;
+    updateFormMode();
+  });
+
+  // Update form mode
+  function updateFormMode() {
+    if (isLoginMode) {
+      formTitle.textContent = 'Login';
+      submitBtn.textContent = 'Login';
+      toggleAuthBtn.textContent = 'Register';
+      authToggle.innerHTML = 'Don\'t have an account? <span style="color: #00d4ff;">Register here</span>';
+    } else {
+      formTitle.textContent = 'Register';
+      submitBtn.textContent = 'Register';
+      toggleAuthBtn.textContent = 'Login';
+      authToggle.innerHTML = 'Already have an account? <span style="color: #00d4ff;">Login here</span>';
+    }
   }
-});
 
-// Show user dropdown
-userInfo.addEventListener('click', (e) => {
-  e.stopPropagation();
-  userDropdown.classList.toggle('show');
-});
+  // Login function
 
-// Close dropdown when clicking outside
-document.addEventListener('click', (e) => {
-  if (!userInfo.contains(e.target)) {
-    userDropdown.classList.remove('show');
-  }
-});
 
-// Logout
-logoutLink.addEventListener('click', (e) => {
-  e.preventDefault();
-  currentUser  = null;
-  clearCurrentUser ();
-  loginBtn.style.display = 'flex';
-  userInfo.style.display = 'none';
-  userDropdown.classList.remove('show');
-  showAlert('Logged out successfully!', 'success');
-});
+  // Login function
+  async function login(username, email, password) {
+    try {
+      const users = await apiRequest('/users');
+      if (isLoginMode) {
+        const user = users.find(u => (u.username === username || u.email === email) && u.password === password);
+        if (!user) {
+          showAlert('Invalid credentials', 'error');
+          return false;
+        }
+        currentUser  = user;
+        console.log('User  logged in:', currentUser .username);
+      } else {
+        const existingUser  = users.find(u => u.username === username || u.email === email);
+        if (existingUser ) {
+          showAlert('Username or email already exists', 'error');
+          return false;
+        }
 
-// Rate content function
-async function rateContent(type, id, rating) {
-  if (!currentUser ) {
-    showAlert('Please login to rate content', 'error');
-    return;
-  }
+        const maxId = users.length > 0 ? Math.max(...users.map(u => parseInt(u.id.replace('u', '')))) : 0;
+        const newUserId = `u${maxId + 1}`;
 
-  try {
-    currentUser .userRatings[type][id] = rating;
-    await apiRequest(`/users/${currentUser .id}`, 'PUT', currentUser );
-    saveCurrentUser ();
-    showAlert('Rating saved!', 'success');
-    console.log(`Rating saved: ${type} ${id} = ${rating}`);
-  } catch (error) {
-    console.error('Error saving rating:', error);
-    showAlert('Failed to save rating', 'error');
-  }
-}
+        const newUser  = {
+          id: newUserId,
+          username: username,
+          email: email,
+          password: password, // In production, this should be hashed
+          userRatings: {
+            filme: {},
+            buecher: {},
+            serien: {}
+          }
+        };
 
-// Show alert function
-function showAlert(message, type) {
-  const existingAlerts = document.querySelectorAll('.alert');
-  existingAlerts.forEach(alert => alert.remove());
-
-  const alert = document.createElement('div');
-  alert.className = `alert alert-${type} show`;
-  alert.textContent = message;
-  document.body.appendChild(alert);
-
-  setTimeout(() => {
-    alert.classList.remove('show');
-    setTimeout(() => {
-      if (document.body.contains(alert)) {
-        document.body.removeChild(alert);
+        const createdUser  = await apiRequest('/users', 'POST', newUser );
+        currentUser  = createdUser ;
+        console.log('New user registered:', newUser );
+        console.log('Total users in database:', users.length + 1);
       }
-    }, 300);
-  }, 3000);
-}
 
-// Search functionality
-let allItems = []; // Initialisiere allItems hier
-
-function renderSearchResults(query) {
-  const resultsContainer = document.getElementById('results');
-  resultsContainer.innerHTML = '';
-  const filteredItems = allItems.filter(item => item.titel.toLowerCase().includes(query.toLowerCase()));
-
-  if (filteredItems.length === 0) {
-    resultsContainer.innerHTML = '<p>Keine Ergebnisse gefunden.</p>';
-    return;
+      updateUIForLoggedInUser ();
+      saveCurrentUser ();
+      loginModal.classList.remove('show');
+      authForm.reset();
+      return true;
+    } catch (error) {
+      console.error('Login/Register error:', error);
+      showAlert('Connection error. Please try again.', 'error');
+      return false;
+    }
   }
 
-  filteredItems.forEach(item => {
-    const card = document.createElement('div');
-    card.className = 'card';
-    card.innerHTML = `
+  // Handle form submission
+  authForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const username = document.getElementById('username').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const password = document.getElementById('password').value.trim();
+
+    if (!username || !email || !password) {
+      showAlert('Please fill in all fields', 'error');
+      return;
+    }
+
+    if (password.length < 6) {
+      showAlert('Password must be at least 6 characters', 'error');
+      return;
+    }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      showAlert('Please enter a valid email address', 'error');
+      return;
+    }
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = isLoginMode ? 'Logging in...' : 'Registering...';
+
+    const success = await login(username, email, password);
+
+    submitBtn.disabled = false;
+    submitBtn.textContent = isLoginMode ? 'Login' : 'Register';
+
+    if (success) {
+      const message = isLoginMode ? 'Login successful!' : 'Registration successful! User saved to database.';
+      showAlert(message, 'success');
+    }
+  });
+
+  // Show user dropdown
+  userInfo.addEventListener('click', (e) => {
+    e.stopPropagation();
+    userDropdown.classList.toggle('show');
+  });
+
+  // Close dropdown when clicking outside
+  document.addEventListener('click', (e) => {
+    if (!userInfo.contains(e.target)) {
+      userDropdown.classList.remove('show');
+    }
+  });
+
+  // Logout
+  logoutLink.addEventListener('click', (e) => {
+    e.preventDefault();
+    currentUser  = null;
+    clearCurrentUser ();
+    loginBtn.style.display = 'flex';
+    userInfo.style.display = 'none';
+    userDropdown.classList.remove('show');
+    showAlert('Logged out successfully!', 'success');
+  });
+
+  // Rate content function
+  async function rateContent(type, id, rating) {
+    if (!currentUser ) {
+      showAlert('Please login to rate content', 'error');
+      return;
+    }
+
+    try {
+      currentUser .userRatings[type][id] = rating;
+      await apiRequest(`/users/${currentUser .id}`, 'PUT', currentUser );
+      saveCurrentUser ();
+      showAlert('Rating saved!', 'success');
+      console.log(`Rating saved: ${type} ${id} = ${rating}`);
+    } catch (error) {
+      console.error('Error saving rating:', error);
+      showAlert('Failed to save rating', 'error');
+    }
+  }
+
+  // Show alert function
+  function showAlert(message, type) {
+    const existingAlerts = document.querySelectorAll('.alert');
+    existingAlerts.forEach(alert => alert.remove());
+
+    const alert = document.createElement('div');
+    alert.className = `alert alert-${type} show`;
+    alert.textContent = message;
+    document.body.appendChild(alert);
+
+    setTimeout(() => {
+      alert.classList.remove('show');
+      setTimeout(() => {
+        if (document.body.contains(alert)) {
+          document.body.removeChild(alert);
+        }
+      }, 300);
+    }, 3000);
+  }
+
+  // Search functionality
+  let allItems = []; // Initialisiere allItems hier
+
+  function renderSearchResults(query) {
+    const resultsContainer = document.getElementById('results');
+    resultsContainer.innerHTML = '';
+    const filteredItems = allItems.filter(item => item.titel.toLowerCase().includes(query.toLowerCase()));
+
+    if (filteredItems.length === 0) {
+      resultsContainer.innerHTML = '<p>Keine Ergebnisse gefunden.</p>';
+      return;
+    }
+
+    filteredItems.forEach(item => {
+      const card = document.createElement('div');
+      card.className = 'card';
+      card.innerHTML = `
       <img src="${item.bild}" alt="${item.titel}" />
       <h3 class="card-title">${item.titel}</h3>
       <p class="card-rating">Bewertung: ${item.bewertung} ⭐</p>
       <p class="card-description">${item.beschreibung}</p>
       <button class="card-button">Details</button>
     `;
-    resultsContainer.appendChild(card);
-  });
-}
-
-// Suchfunktion
-document.querySelector('.search-btn').addEventListener('click', () => {
-  const searchTerm = document.querySelector('.search-input').value.trim();
-  if (searchTerm) {
-    renderSearchResults(searchTerm);
-  } else {
-    showAlert('Bitte geben Sie einen Suchbegriff ein', 'error');
+      resultsContainer.appendChild(card);
+    });
   }
-});
 
-// Suche mit der Enter-Taste
-document.querySelector('.search-input').addEventListener('keypress', (e) => {
-  if (e.key === 'Enter') {
-    document.querySelector('.search-btn').click();
-  }
-});
-
-// Smooth scrolling für Navigationslinks
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function (e) {
-    e.preventDefault();
-    const target = document.querySelector(this.getAttribute('href'));
-    if (target) {
-      target.scrollIntoView({
-        behavior: 'smooth'
-      });
+  // Suchfunktion
+  document.querySelector('.search-btn').addEventListener('click', () => {
+    const searchTerm = document.querySelector('.search-input').value.trim();
+    if (searchTerm) {
+      renderSearchResults(searchTerm);
+    } else {
+      showAlert('Bitte geben Sie einen Suchbegriff ein', 'error');
     }
   });
-});
 
-// Scroll-Animationen
-const observerOptions = {
-  threshold: 0.1,
-  rootMargin: '0px 0px -50px 0px'
-};
-
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
+  // Suche mit der Enter-Taste
+  document.querySelector('.search-input').addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') {
+      document.querySelector('.search-btn').click();
     }
   });
-}, observerOptions);
 
-document.querySelectorAll('.fade-in').forEach(el => {
-  observer.observe(el);
-});
-
-// Header-Hintergrundfarbe bei Scrollen ändern
-window.addEventListener('scroll', () => {
-  const header = document.querySelector('header');
-  if (window.scrollY > 100) {
-    header.style.background = 'rgba(15, 15, 35, 0.98)';
-  } else {
-    header.style.background = 'rgba(15, 15, 35, 0.95)';
-  }
-});
-
-// Karten-Klick-Animationen
-document.querySelectorAll('.card, .wide-card').forEach(card => {
-  card.addEventListener('click', function() {
-    this.style.transform = 'scale(0.95)';
-    setTimeout(() => {
-      this.style.transform = '';
-    }, 150);
+  // Smooth scrolling für Navigationslinks
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        target.scrollIntoView({
+          behavior: 'smooth'
+        });
+      }
+    });
   });
-});
 
-// Initialize the page
-document.addEventListener('DOMContentLoaded', async () => {
-  console.log('Entertainment Hub initializing...');
+  // Scroll-Animationen
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  };
 
-  // Check if user was previously logged in (before loading data)
-  checkStoredLogin();
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, observerOptions);
 
-  // Load data from API
-  await loadAppData();
+  document.querySelectorAll('.fade-in').forEach(el => {
+    observer.observe(el);
+  });
 
-  // Initialisiere allItems nach dem Laden der Daten
-  allItems = [
-    ...appData.filme.map(f => ({...f, type: 'Film'})),
-    ...appData.buecher.map(b => ({...b, type: 'Buch'})),
-    ...appData.serien.map(s => ({...s, type: 'Serie'}))
-  ];
-
-  // Verify stored user still exists in database
-  if (currentUser  && appData && appData.users) {
-    const userExists = appData.users.find(u => u.id === currentUser .id);
-    if (!userExists) {
-      console.log('Stored user no longer exists in database, logging out');
-      currentUser  = null;
-      clearCurrentUser ();
-      loginBtn.style.display = 'flex';
-      userInfo.style.display = 'none';
+  // Header-Hintergrundfarbe bei Scrollen ändern
+  window.addEventListener('scroll', () => {
+    const header = document.querySelector('header');
+    if (window.scrollY > 100) {
+      header.style.background = 'rgba(15, 15, 35, 0.98)';
+    } else {
+      header.style.background = 'rgba(15, 15, 35, 0.95)';
     }
-  }
+  });
 
-  if (appData && appData.users) {
-    console.log('Available users:', appData.users.map(u => ({ username: u.username, email: u.email })));
-  }
-  console.log('Current user:', currentUser  ? currentUser .username : 'None');
-});
+  // Karten-Klick-Animationen
+  document.querySelectorAll('.card, .wide-card').forEach(card => {
+    card.addEventListener('click', function() {
+      this.style.transform = 'scale(0.95)';
+      setTimeout(() => {
+        this.style.transform = '';
+      }, 150);
+    });
+  });
 
-// Export functions for global access
-window.rateContent = rateContent;
-window.getCurrentUser  = () => currentUser ;
-window.getAppData = () => appData;
+  // Initialize the page
+  document.addEventListener('DOMContentLoaded', async () => {
+    console.log('Entertainment Hub initializing...');
 
-// Debug functions (remove in production)
-window.debugShowUsers = async () => {
-  try {
-    const users = await apiRequest('/users');
-    console.log('All users from API:', users);
-    console.log('Current user:', currentUser );
-  } catch (error) {
-    console.error('Error fetching users:', error);
-  }
-};
+    // Check if user was previously logged in (before loading data)
+    checkStoredLogin();
 
-window.debugClearLocalData = () => {
-  localStorage.removeItem('entertainhub_current_user');
-  console.log('Local user data cleared');
-  location.reload();
-};
+    // Load data from API
+    await loadAppData();
+
+    // Initialisiere allItems nach dem Laden der Daten
+    allItems = [
+      ...appData.filme.map(f => ({...f, type: 'Film'})),
+      ...appData.buecher.map(b => ({...b, type: 'Buch'})),
+      ...appData.serien.map(s => ({...s, type: 'Serie'}))
+    ];
+
+    // Verify stored user still exists in database
+    if (currentUser  && appData && appData.users) {
+      const userExists = appData.users.find(u => u.id === currentUser .id);
+      if (!userExists) {
+        console.log('Stored user no longer exists in database, logging out');
+        currentUser  = null;
+        clearCurrentUser ();
+        loginBtn.style.display = 'flex';
+        userInfo.style.display = 'none';
+      }
+    }
+
+    if (appData && appData.users) {
+      console.log('Available users:', appData.users.map(u => ({ username: u.username, email: u.email })));
+    }
+    console.log('Current user:', currentUser  ? currentUser .username : 'None');
+  });
+
+  // Export functions for global access
+  window.rateContent = rateContent;
+  window.getCurrentUser  = () => currentUser ;
+  window.getAppData = () => appData;
+
+  // Debug functions (remove in production)
+  window.debugShowUsers = async () => {
+    try {
+      const users = await apiRequest('/users');
+      console.log('All users from API:', users);
+      console.log('Current user:', currentUser );
+    } catch (error) {
+      console.error('Error fetching users:', error);
+    }
+  };
+
+  window.debugClearLocalData = () => {
+    localStorage.removeItem('entertainhub_current_user');
+    console.log('Local user data cleared');
+    location.reload();
+  };
 
 
 </script>
