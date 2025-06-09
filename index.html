@@ -1379,13 +1379,13 @@
       <h3 class="card-title">${item.titel}</h3>
       <p class="card-rating">Bewertung: ${item.bewertung} ⭐</p>
       <p class="card-description">${item.beschreibung}</p>
-      <button class="card-button">Details</button>
+
     `;
       resultsContainer.appendChild(card);
     });
   }
 
-  // Suchfunktion
+  // Suchfunktion// <button class="card-button">Details</button>
   document.querySelector('.search-btn').addEventListener('click', () => {
     const searchTerm = document.querySelector('.search-input').value.trim();
     if (searchTerm) {
