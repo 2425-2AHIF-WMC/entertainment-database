@@ -1,5 +1,5 @@
- // Beispiel-Serien mit Staffeln als Zahl
-    const defaultSerien = [
+// Beispiel-Serien mit Staffeln als Zahl
+const defaultSerien = [
     {
         id: 's1',
         titel: "Breaking Bad",
@@ -27,18 +27,18 @@
         staffeln: 4,
         userRating: 0
     }
-    ];
+];
 
 let serien = [...defaultSerien];
-     let watchlist = JSON.parse(localStorage.getItem('watchlist')) || [];
+let watchlist = JSON.parse(localStorage.getItem('watchlist')) || [];
 
-     function renderSerien() {
-     const serieList = document.getElementById('serie-list');
-     serieList.innerHTML = '';
-     serien.forEach(serie => {
-     const card = document.createElement('div');
-     card.className = 'card';
-     card.innerHTML = `
+function renderSerien() {
+    const serieList = document.getElementById('serie-list');
+    serieList.innerHTML = '';
+    serien.forEach(serie => {
+        const card = document.createElement('div');
+        card.className = 'card';
+        card.innerHTML = `
                 <img src="${serie.bild}" alt="${serie.titel}">
                 <div class="card-content">
                     <h3 class="card-title">${serie.titel}</h3>
@@ -56,109 +56,109 @@ let serien = [...defaultSerien];
                     <button class="add-watchlist-btn" data-id="${serie.id}">${watchlist.includes(serie.id) ? 'Von Watchlist entfernen' : 'Zur Watchlist hinzufügen'}</button>
                 </div>
             `;
-     serieList.appendChild(card);
- });
- }
+        serieList.appendChild(card);
+    });
+}
 
-     function renderWatchlist() {
-     const watchlistElement = document.getElementById('watchlist');
-     watchlistElement.innerHTML = '';
-     if (watchlist.length === 0) {
-     watchlistElement.innerHTML = '<li>Deine Watchlist ist leer.</li>';
-     return;
- }
-     watchlist.forEach(serieId => {
-     const serie = serien.find(s => s.id === serieId);
-     if (serie) {
-     const li = document.createElement('li');
-     li.className = 'watchlist-item';
-     li.textContent = serie.titel;
-     const removeBtn = document.createElement('button');
-     removeBtn.textContent = '×';
-     removeBtn.className = 'remove-btn';
-     removeBtn.addEventListener('click', () => {
-     removeFromWatchlist(serie.id);
- });
-     li.appendChild(removeBtn);
-     watchlistElement.appendChild(li);
- }
- });
- }
+function renderWatchlist() {
+    const watchlistElement = document.getElementById('watchlist');
+    watchlistElement.innerHTML = '';
+    if (watchlist.length === 0) {
+        watchlistElement.innerHTML = '<li>Deine Watchlist ist leer.</li>';
+        return;
+    }
+    watchlist.forEach(serieId => {
+        const serie = serien.find(s => s.id === serieId);
+        if (serie) {
+            const li = document.createElement('li');
+            li.className = 'watchlist-item';
+            li.textContent = serie.titel;
+            const removeBtn = document.createElement('button');
+            removeBtn.textContent = '×';
+            removeBtn.className = 'remove-btn';
+            removeBtn.addEventListener('click', () => {
+                removeFromWatchlist(serie.id);
+            });
+            li.appendChild(removeBtn);
+            watchlistElement.appendChild(li);
+        }
+    });
+}
 
-     function addToWatchlist(serieId) {
-     if (!watchlist.includes(serieId)) {
-     watchlist.push(serieId);
-     localStorage.setItem('watchlist', JSON.stringify(watchlist));
-     renderWatchlist();
-     renderSerien();
- }
- }
+function addToWatchlist(serieId) {
+    if (!watchlist.includes(serieId)) {
+        watchlist.push(serieId);
+        localStorage.setItem('watchlist', JSON.stringify(watchlist));
+        renderWatchlist();
+        renderSerien();
+    }
+}
 
-     function removeFromWatchlist(serieId) {
-     watchlist = watchlist.filter(id => id !== serieId);
-     localStorage.setItem('watchlist', JSON.stringify(watchlist));
-     renderWatchlist();
-     renderSerien();
- }
+function removeFromWatchlist(serieId) {
+    watchlist = watchlist.filter(id => id !== serieId);
+    localStorage.setItem('watchlist', JSON.stringify(watchlist));
+    renderWatchlist();
+    renderSerien();
+}
 
-     document.getElementById('watchlistToggleBtn').addEventListener('click', () => {
-     const watchlistPanel = document.getElementById('watchlistPanel');
-     watchlistPanel.style.display = watchlistPanel.style.display === 'block' ? 'none' : 'block';
-     renderWatchlist();
- });
+document.getElementById('watchlistToggleBtn').addEventListener('click', () => {
+    const watchlistPanel = document.getElementById('watchlistPanel');
+    watchlistPanel.style.display = watchlistPanel.style.display === 'block' ? 'none' : 'block';
+    renderWatchlist();
+});
 
-     document.addEventListener('click', (e) => {
-     if (e.target.classList.contains('add-watchlist-btn')) {
-     const serieId = e.target.getAttribute('data-id');
-     if (watchlist.includes(serieId)) {
-     removeFromWatchlist(serieId);
-     e.target.textContent = 'Zur Watchlist hinzufügen';
- } else {
-     addToWatchlist(serieId);
-     e.target.textContent = 'Von Watchlist entfernen';
- }
- }
+document.addEventListener('click', (e) => {
+    if (e.target.classList.contains('add-watchlist-btn')) {
+        const serieId = e.target.getAttribute('data-id');
+        if (watchlist.includes(serieId)) {
+            removeFromWatchlist(serieId);
+            e.target.textContent = 'Zur Watchlist hinzufügen';
+        } else {
+            addToWatchlist(serieId);
+            e.target.textContent = 'Von Watchlist entfernen';
+        }
+    }
 
-     if (e.target.classList.contains('star')) {
-     const serieId = e.target.parentElement.getAttribute('data-id');
-     const rating = parseInt(e.target.getAttribute('data-value'));
-     const serie = serien.find(s => s.id === serieId);
-     if (serie) {
-     serie.userRating = rating; // Setze die Benutzerbewertung
-     renderSerien(); // Aktualisiere die Serienkarten
- }
- }
- });
+    if (e.target.classList.contains('star')) {
+        const serieId = e.target.parentElement.getAttribute('data-id');
+        const rating = parseInt(e.target.getAttribute('data-value'));
+        const serie = serien.find(s => s.id === serieId);
+        if (serie) {
+            serie.userRating = rating; // Setze die Benutzerbewertung
+            renderSerien(); // Aktualisiere die Serienkarten
+        }
+    }
+});
 
-     document.getElementById('addSerieBtn').addEventListener('click', () => {
-     const titelInput = document.getElementById('titelInput').value;
-     const bewertungInput = parseFloat(document.getElementById('bewertungInput').value);
-     const beschreibungInput = document.getElementById('beschreibungInput').value;
-     const bildInput = document.getElementById('bildInput').value;
-     const staffelnInput = parseInt(document.getElementById('staffelnInput').value);
+document.getElementById('addSerieBtn').addEventListener('click', () => {
+    const titelInput = document.getElementById('titelInput').value;
+    const bewertungInput = parseFloat(document.getElementById('bewertungInput').value);
+    const beschreibungInput = document.getElementById('beschreibungInput').value;
+    const bildInput = document.getElementById('bildInput').value;
+    const staffelnInput = parseInt(document.getElementById('staffelnInput').value);
 
-     if (titelInput && !isNaN(bewertungInput) && beschreibungInput && bildInput && !isNaN(staffelnInput)) {
-     const newSerie = {
-     id: titelInput.toLowerCase().replace(/\s+/g, '-'),
-     titel: titelInput,
-     bewertung: bewertungInput,
-     beschreibung: beschreibungInput,
-     bild: bildInput,
-     staffeln: staffelnInput,
-     userRating: 0 // Initiale Benutzerbewertung
- };
-     serien.push(newSerie);
-     renderSerien();
-     document.getElementById('titelInput').value = '';
-     document.getElementById('bewertungInput').value = '';
-     document.getElementById('beschreibungInput').value = '';
-     document.getElementById('bildInput').value = '';
-     document.getElementById('staffelnInput').value = '';
- } else {
-     alert('Bitte fülle alle Felder aus.');
- }
- });
+    if (titelInput && !isNaN(bewertungInput) && beschreibungInput && bildInput && !isNaN(staffelnInput)) {
+        const newSerie = {
+            id: titelInput.toLowerCase().replace(/\s+/g, '-'),
+            titel: titelInput,
+            bewertung: bewertungInput,
+            beschreibung: beschreibungInput,
+            bild: bildInput,
+            staffeln: staffelnInput,
+            userRating: 0 // Initiale Benutzerbewertung
+        };
+        serien.push(newSerie);
+        renderSerien();
+        document.getElementById('titelInput').value = '';
+        document.getElementById('bewertungInput').value = '';
+        document.getElementById('beschreibungInput').value = '';
+        document.getElementById('bildInput').value = '';
+        document.getElementById('staffelnInput').value = '';
+    } else {
+        alert('Bitte fülle alle Felder aus.');
+    }
+});
 
-     // Initial render
-     renderSerien();
-     renderWatchlist();
+// Initial render
+renderSerien();
+renderWatchlist();

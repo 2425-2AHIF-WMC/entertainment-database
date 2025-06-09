@@ -152,75 +152,6 @@
       text-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
     }
 
-    /* Dropdown */
-    .submenu {
-      position: absolute;
-      width: 200px;
-      left: 50%;
-      margin-left: -100px;
-      transform: skewX(-25deg);
-      transform-origin: left top;
-      top: 100%;
-      background: rgba(52, 73, 94, 0.95);
-      backdrop-filter: blur(10px);
-      border-radius: 0 0 10px 10px;
-    }
-
-    .submenu li {
-      position: relative;
-      overflow: hidden;
-      transition: all 0.3s ease;
-    }
-
-    .submenu > li > a {
-      padding: 1em 2em;
-      transition: all 0.3s ease;
-    }
-
-    .submenu > li:hover {
-      background: rgba(0, 212, 255, 0.2);
-    }
-
-    .submenu > li:nth-child(odd) {
-      transform: skewX(-25deg) translateX(0);
-    }
-
-    .submenu > li:nth-child(odd) > a {
-      transform: skewX(25deg);
-    }
-
-    .submenu > li:nth-child(even) {
-      transform: skewX(25deg) translateX(0);
-    }
-
-    .submenu > li:nth-child(even) > a {
-      transform: skewX(-25deg);
-    }
-
-    /* Show dropdown */
-    .submenu,
-    .submenu li {
-      opacity: 0;
-      visibility: hidden;
-    }
-
-    .submenu li {
-      transition: 0.3s ease transform, 0.3s ease opacity;
-    }
-
-    .menu > li:hover .submenu,
-    .menu > li:hover .submenu li {
-      opacity: 1;
-      visibility: visible;
-    }
-
-    .menu > li:hover .submenu li:nth-child(even) {
-      transform: skewX(25deg) translateX(15px);
-    }
-
-    .menu > li:hover .submenu li:nth-child(odd) {
-      transform: skewX(-25deg) translateX(-15px);
-    }
 
     /* Search and Login Container */
     .search-login-container {
@@ -766,6 +697,20 @@
     .alert-error {
       background: linear-gradient(45deg, #e74c3c, #c0392b);
     }
+    .results-container {
+
+      background: linear-gradient(145deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 20px;
+      text-align: center;
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+      max-height: 100rem;
+
+    }
   </style>
 </head>
 <body>
@@ -779,24 +724,19 @@
     <ul class="menu cf">
       <li><a href="#home"><b>Home</b></a></li>
       <li>
-        <a href="#"><b>Services</b></a>
-        <ul class="submenu">
-          <li><a href="#">Web design</a></li>
-          <li><a href="#">Graphics design</a></li>
-          <li><a href="#">App development</a></li>
-          <li><a href="#">Marketing</a></li>
-        </ul>
+        <a href="https://www.rottentomatoes.com/" target="_blank" rel="noopener noreferrer"><b>Rotten Tomatoes</b></a>
       </li>
-      <li><a href="#"><b>Blog</b></a></li>
+      <li><a href="https://www.imdb.com/de/" target="_blank" rel="noopener noreferrer"><b>IMDB</b></a></li>
       <li><a href="#contact"><b>About us</b></a></li>
     </ul>
 
     <div class="nav-right">
       <div class="search-login-container">
         <div class="search-container">
-          <input type="search" class="search-input" placeholder="Search content..." aria-label="Search"/>
+          <input type="search" class="search-input" placeholder="Search content..." aria-label="Search" />
           <button class="search-btn" type="submit"><i class="fas fa-search"></i></button>
         </div>
+
 
         <div class="login-container">
           <button class="login-btn" id="loginBtn">
@@ -806,7 +746,7 @@
 
           <div class="user-info" id="userInfo" style="display: none;">
             <div class="user-avatar" id="userAvatar">U</div>
-            <span id="user-id">User</span>
+            <span id="user-id">User </span>
             <i class="fas fa-chevron-down"></i>
           </div>
 
@@ -821,6 +761,12 @@
   </nav>
 </header>
 
+<!-- Suchergebnisse -->
+<section class="search-results-section" id="search-results">
+  <div class="results-container" id="results">
+    <!-- Suchergebnisse werden hier angezeigt -->
+  </div>
+</section>
 <!-- Login Modal -->
 <div class="login-modal" id="loginModal">
   <div class="login-form">
@@ -856,6 +802,7 @@
     <p class="hero-subtitle">Discover Amazing Series, Movies & Books</p>
   </div>
 </section>
+
 
 <section class="cards-section" id="content">
   <div class="cards-container">
@@ -893,7 +840,7 @@
       <p class="card-description">
         Lose yourself in incredible stories. From fantasy epics to thought-provoking literature that expands your world.
       </p>
-      <button class="card-button" onclick="window.location.href='bücher/books.html'">
+      <button class="card-button" onclick="window.location.href='b%C3%BCcher/books.html'">
         Read Books
       </button>
     </div>
@@ -905,29 +852,30 @@
     <div class="footer-section">
       <h3>About EntertainHub</h3>
       <p>Your ultimate destination for entertainment discovery. We bring you the best in movies, series, books, and gaming all in one place.</p>
-      <a href="#"><i class="fab fa-facebook-f"></i></a>
-      <a href="#"><i class="fab fa-twitter"></i></a>
-      <a href="#"><i class="fab fa-instagram"></i></a>
-      <a href="#"><i class="fab fa-youtube"></i></a>
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+      </div>
     </div>
-  </div>
 
-  <div class="footer-section">
-    <h3>Quick Links</h3>
-    <ul>
-      <li><a href="#home">Home</a></li>
-      <li><a href="#series">Series</a></li>
-      <li><a href="#movies">Movies</a></li>
-      <li><a href="#books">Books</a></li>
-    </ul>
-  </div>
+    <div class="footer-section">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="serie/serien.html">Series</a></li>
+        <li><a href="movie/movie.html">Movies</a></li>
+        <li><a href="bücher/books.html">Books</a></li>
+      </ul>
+    </div>
 
-  <div class="footer-section">
-    <h3>Contact Us</h3>
-    <p><i class="fas fa-envelope"></i> info@entertainhub.com</p>
-    <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
-    <p><i class="fas fa-map-marker-alt"></i> 123 Entertainment St, Media City</p>
-  </div>
+    <div class="footer-section">
+      <h3>Contact Us</h3>
+      <p><i class="fas fa-envelope"></i> elena@mayer.or.at / j.hoermedinger@students.htl-leonding.ac.at</p>
+      <p><i class="fas fa-phone"></i> +43 677 63222543 / +43 676 6065394 </p>
+      <p><i class="fas fa-map-marker-alt"></i> 123 Entertainment St, Media City</p>
+    </div>
   </div>
 
   <div class="footer-bottom">
@@ -935,8 +883,9 @@
   </div>
 </footer>
 
+
 <script>// User authentication state
-let currentUser = null;
+let currentUser  = null;
 let isLoginMode = true;
 let appData = null;
 
@@ -957,27 +906,22 @@ const toggleAuthBtn = document.getElementById('toggleAuthBtn');
 const authToggle = document.getElementById('authToggle');
 const userDropdown = document.getElementById('userDropdown');
 const logoutLink = document.getElementById('logoutLink');
+const resultsContainer = document.getElementById('results'); // Container für Suchergebnisse
+const searchInput = document.querySelector('.search-input'); // Suchfeld
 
 // API Helper Functions
 async function apiRequest(endpoint, method = 'GET', data = null) {
+  const config = {
+    method,
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    ...(data && { body: JSON.stringify(data) }) // Bedingte Zuweisung
+  };
+
   try {
-    const config = {
-      method,
-      headers: {
-        'Content-Type': 'application/json',
-      }
-    };
-
-    if (data) {
-      config.body = JSON.stringify(data);
-    }
-
     const response = await fetch(`${API_BASE}${endpoint}`, config);
-
-    if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
-    }
-
+    if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
     return await response.json();
   } catch (error) {
     console.error('API Request failed:', error);
@@ -1007,40 +951,38 @@ async function loadAppData() {
 
 // Check if user is logged in from localStorage
 function checkStoredLogin() {
-  try {
-    const storedUser = localStorage.getItem('entertainhub_current_user');
-    if (storedUser) {
-      const userData = JSON.parse(storedUser);
-      // We'll verify the user exists when we load the data
-      currentUser = userData;
-      updateUIForLoggedInUser();
+  const storedUser  = localStorage.getItem('entertainhub_current_user');
+  if (storedUser ) {
+    try {
+      currentUser  = JSON.parse(storedUser );
+      updateUIForLoggedInUser ();
       return true;
+    } catch (error) {
+      console.error('Error parsing stored user:', error);
+      localStorage.removeItem('entertainhub_current_user');
     }
-  } catch (error) {
-    console.error('Error checking stored login:', error);
-    localStorage.removeItem('entertainhub_current_user');
   }
   return false;
 }
 
 // Save current user to localStorage
-function saveCurrentUser() {
-  if (currentUser) {
-    localStorage.setItem('entertainhub_current_user', JSON.stringify(currentUser));
+function saveCurrentUser () {
+  if (currentUser ) {
+    localStorage.setItem('entertainhub_current_user', JSON.stringify(currentUser ));
   }
 }
 
 // Clear current user from localStorage
-function clearCurrentUser() {
+function clearCurrentUser () {
   localStorage.removeItem('entertainhub_current_user');
 }
 
 // Update UI when user is logged in
-function updateUIForLoggedInUser() {
+function updateUIForLoggedInUser () {
   loginBtn.style.display = 'none';
   userInfo.style.display = 'flex';
-  userName.textContent = currentUser.username;
-  userAvatar.textContent = currentUser.username.charAt(0).toUpperCase();
+  userName.textContent = currentUser .username;
+  userAvatar.textContent = currentUser .username.charAt(0).toUpperCase();
 }
 
 // Show login modal
@@ -1072,6 +1014,7 @@ authToggle.addEventListener('click', () => {
   updateFormMode();
 });
 
+// Update form mode
 function updateFormMode() {
   if (isLoginMode) {
     formTitle.textContent = 'Login';
@@ -1089,36 +1032,26 @@ function updateFormMode() {
 // Login function
 async function login(username, email, password) {
   try {
+    const users = await apiRequest('/users');
     if (isLoginMode) {
-      // Check if user exists for login
-      const users = await apiRequest('/users');
-      const user = users.find(u =>
-              (u.username === username || u.email === email) && u.password === password
-      );
-
+      const user = users.find(u => (u.username === username || u.email === email) && u.password === password);
       if (!user) {
         showAlert('Invalid credentials', 'error');
         return false;
       }
-
-      currentUser = user;
-      console.log('User logged in:', currentUser.username);
+      currentUser  = user;
+      console.log('User  logged in:', currentUser .username);
     } else {
-      // Register new user
-      const users = await apiRequest('/users');
-      const existingUser = users.find(u => u.username === username || u.email === email);
-
-      if (existingUser) {
+      const existingUser  = users.find(u => u.username === username || u.email === email);
+      if (existingUser ) {
         showAlert('Username or email already exists', 'error');
         return false;
       }
 
-      // Generate new user ID
       const maxId = users.length > 0 ? Math.max(...users.map(u => parseInt(u.id.replace('u', '')))) : 0;
       const newUserId = `u${maxId + 1}`;
 
-      // Create new user object
-      const newUser = {
+      const newUser  = {
         id: newUserId,
         username: username,
         email: email,
@@ -1130,20 +1063,16 @@ async function login(username, email, password) {
         }
       };
 
-      // Add to database via API
-      const createdUser = await apiRequest('/users', 'POST', newUser);
-      currentUser = createdUser;
-
-      console.log('New user registered:', newUser);
+      const createdUser  = await apiRequest('/users', 'POST', newUser );
+      currentUser  = createdUser ;
+      console.log('New user registered:', newUser );
       console.log('Total users in database:', users.length + 1);
     }
 
-    // Update UI and save login state
-    updateUIForLoggedInUser();
-    saveCurrentUser();
+    updateUIForLoggedInUser ();
+    saveCurrentUser ();
     loginModal.classList.remove('show');
     authForm.reset();
-
     return true;
   } catch (error) {
     console.error('Login/Register error:', error);
@@ -1160,7 +1089,6 @@ authForm.addEventListener('submit', async (e) => {
   const email = document.getElementById('email').value.trim();
   const password = document.getElementById('password').value.trim();
 
-  // Validation
   if (!username || !email || !password) {
     showAlert('Please fill in all fields', 'error');
     return;
@@ -1171,21 +1099,17 @@ authForm.addEventListener('submit', async (e) => {
     return;
   }
 
-  // Validate email format
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   if (!emailRegex.test(email)) {
     showAlert('Please enter a valid email address', 'error');
     return;
   }
 
-  // Show loading state
   submitBtn.disabled = true;
   submitBtn.textContent = isLoginMode ? 'Logging in...' : 'Registering...';
 
-  // Attempt login/register
   const success = await login(username, email, password);
 
-  // Reset button state
   submitBtn.disabled = false;
   submitBtn.textContent = isLoginMode ? 'Login' : 'Register';
 
@@ -1211,8 +1135,8 @@ document.addEventListener('click', (e) => {
 // Logout
 logoutLink.addEventListener('click', (e) => {
   e.preventDefault();
-  currentUser = null;
-  clearCurrentUser();
+  currentUser  = null;
+  clearCurrentUser ();
   loginBtn.style.display = 'flex';
   userInfo.style.display = 'none';
   userDropdown.classList.remove('show');
@@ -1221,20 +1145,15 @@ logoutLink.addEventListener('click', (e) => {
 
 // Rate content function
 async function rateContent(type, id, rating) {
-  if (!currentUser) {
+  if (!currentUser ) {
     showAlert('Please login to rate content', 'error');
     return;
   }
 
   try {
-    // Update user's rating
-    currentUser.userRatings[type][id] = rating;
-
-    // Update the user in the database via API
-    await apiRequest(`/users/${currentUser.id}`, 'PUT', currentUser);
-
-    // Update stored user data
-    saveCurrentUser();
+    currentUser .userRatings[type][id] = rating;
+    await apiRequest(`/users/${currentUser .id}`, 'PUT', currentUser );
+    saveCurrentUser ();
     showAlert('Rating saved!', 'success');
     console.log(`Rating saved: ${type} ${id} = ${rating}`);
   } catch (error) {
@@ -1264,23 +1183,50 @@ function showAlert(message, type) {
 }
 
 // Search functionality
+let allItems = []; // Initialisiere allItems hier
+
+function renderSearchResults(query) {
+  const resultsContainer = document.getElementById('results');
+  resultsContainer.innerHTML = '';
+  const filteredItems = allItems.filter(item => item.titel.toLowerCase().includes(query.toLowerCase()));
+
+  if (filteredItems.length === 0) {
+    resultsContainer.innerHTML = '<p>Keine Ergebnisse gefunden.</p>';
+    return;
+  }
+
+  filteredItems.forEach(item => {
+    const card = document.createElement('div');
+    card.className = 'card';
+    card.innerHTML = `
+      <img src="${item.bild}" alt="${item.titel}" />
+      <h3 class="card-title">${item.titel}</h3>
+      <p class="card-rating">Bewertung: ${item.bewertung} ⭐</p>
+      <p class="card-description">${item.beschreibung}</p>
+      <button class="card-button">Details</button>
+    `;
+    resultsContainer.appendChild(card);
+  });
+}
+
+// Suchfunktion
 document.querySelector('.search-btn').addEventListener('click', () => {
   const searchTerm = document.querySelector('.search-input').value.trim();
   if (searchTerm) {
-    showAlert(`Searching for: ${searchTerm}`, 'success');
+    renderSearchResults(searchTerm);
   } else {
-    showAlert('Please enter a search term', 'error');
+    showAlert('Bitte geben Sie einen Suchbegriff ein', 'error');
   }
 });
 
-// Search on Enter key
+// Suche mit der Enter-Taste
 document.querySelector('.search-input').addEventListener('keypress', (e) => {
   if (e.key === 'Enter') {
     document.querySelector('.search-btn').click();
   }
 });
 
-// Smooth scrolling for navigation links
+// Smooth scrolling für Navigationslinks
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function (e) {
     e.preventDefault();
@@ -1293,7 +1239,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
-// Scroll animations
+// Scroll-Animationen
 const observerOptions = {
   threshold: 0.1,
   rootMargin: '0px 0px -50px 0px'
@@ -1311,7 +1257,7 @@ document.querySelectorAll('.fade-in').forEach(el => {
   observer.observe(el);
 });
 
-// Header background change on scroll
+// Header-Hintergrundfarbe bei Scrollen ändern
 window.addEventListener('scroll', () => {
   const header = document.querySelector('header');
   if (window.scrollY > 100) {
@@ -1321,7 +1267,7 @@ window.addEventListener('scroll', () => {
   }
 });
 
-// Card click animations
+// Karten-Klick-Animationen
 document.querySelectorAll('.card, .wide-card').forEach(card => {
   card.addEventListener('click', function() {
     this.style.transform = 'scale(0.95)';
@@ -1341,13 +1287,20 @@ document.addEventListener('DOMContentLoaded', async () => {
   // Load data from API
   await loadAppData();
 
+  // Initialisiere allItems nach dem Laden der Daten
+  allItems = [
+    ...appData.filme.map(f => ({...f, type: 'Film'})),
+    ...appData.buecher.map(b => ({...b, type: 'Buch'})),
+    ...appData.serien.map(s => ({...s, type: 'Serie'}))
+  ];
+
   // Verify stored user still exists in database
-  if (currentUser && appData && appData.users) {
-    const userExists = appData.users.find(u => u.id === currentUser.id);
+  if (currentUser  && appData && appData.users) {
+    const userExists = appData.users.find(u => u.id === currentUser .id);
     if (!userExists) {
       console.log('Stored user no longer exists in database, logging out');
-      currentUser = null;
-      clearCurrentUser();
+      currentUser  = null;
+      clearCurrentUser ();
       loginBtn.style.display = 'flex';
       userInfo.style.display = 'none';
     }
@@ -1356,12 +1309,12 @@ document.addEventListener('DOMContentLoaded', async () => {
   if (appData && appData.users) {
     console.log('Available users:', appData.users.map(u => ({ username: u.username, email: u.email })));
   }
-  console.log('Current user:', currentUser ? currentUser.username : 'None');
+  console.log('Current user:', currentUser  ? currentUser .username : 'None');
 });
 
 // Export functions for global access
 window.rateContent = rateContent;
-window.getCurrentUser = () => currentUser;
+window.getCurrentUser  = () => currentUser ;
 window.getAppData = () => appData;
 
 // Debug functions (remove in production)
@@ -1369,7 +1322,7 @@ window.debugShowUsers = async () => {
   try {
     const users = await apiRequest('/users');
     console.log('All users from API:', users);
-    console.log('Current user:', currentUser);
+    console.log('Current user:', currentUser );
   } catch (error) {
     console.error('Error fetching users:', error);
   }
@@ -1379,6 +1332,9 @@ window.debugClearLocalData = () => {
   localStorage.removeItem('entertainhub_current_user');
   console.log('Local user data cleared');
   location.reload();
-};</script>
+};
+
+
+</script>
 </body>
 </html>

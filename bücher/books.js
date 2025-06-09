@@ -1,4 +1,4 @@
- const defaultBuecher = [
+const defaultBuecher = [
     {
         id: 'b1',
         titel: "Der Alchimist",
@@ -26,18 +26,18 @@
         seiten: 1178,
         userRating: 0
     }
-    ];
+];
 
-    let buecher = [...defaultBuecher];
-    let watchlist = JSON.parse(localStorage.getItem('watchlist')) || [];
+let buecher = [...defaultBuecher];
+let watchlist = JSON.parse(localStorage.getItem('watchlist')) || [];
 
-    function renderBuecher() {
+function renderBuecher() {
     const buchList = document.getElementById('buch-list');
     buchList.innerHTML = '';
     buecher.forEach(buch => {
-    const card = document.createElement('div');
-    card.className = 'card';
-    card.innerHTML = `
+        const card = document.createElement('div');
+        card.className = 'card';
+        card.innerHTML = `
                 <img src="${buch.bild}" alt="${buch.titel}">
                 <div class="card-content">
                     <h3 class="card-title">${buch.titel}</h3>
@@ -55,81 +55,81 @@
                     <button class="add-watchlist-btn" data-id="${buch.id}">${watchlist.includes(buch.id) ? 'Von Watchlist entfernen' : 'Zur Watchlist hinzufügen'}</button>
                 </div>
             `;
-    buchList.appendChild(card);
-});
+        buchList.appendChild(card);
+    });
 }
 
-    function renderWatchlist() {
+function renderWatchlist() {
     const watchlistElement = document.getElementById('watchlist');
     watchlistElement.innerHTML = '';
     if (watchlist.length === 0) {
-    watchlistElement.innerHTML = '<li>Deine Watchlist ist leer.</li>';
-    return;
-}
+        watchlistElement.innerHTML = '<li>Deine Watchlist ist leer.</li>';
+        return;
+    }
     watchlist.forEach(buchId => {
-    const buch = buecher.find(b => b.id === buchId);
-    if (buch) {
-    const li = document.createElement('li');
-    li.className = 'watchlist-item';
-    li.textContent = buch.titel;
-    const removeBtn = document.createElement('button');
-    removeBtn.textContent = '×';
-    removeBtn.className = 'remove-btn';
-    removeBtn.addEventListener('click', () => {
-    removeFromWatchlist(buch.id);
-});
-    li.appendChild(removeBtn);
-    watchlistElement.appendChild(li);
-}
-});
+        const buch = buecher.find(b => b.id === buchId);
+        if (buch) {
+            const li = document.createElement('li');
+            li.className = 'watchlist-item';
+            li.textContent = buch.titel;
+            const removeBtn = document.createElement('button');
+            removeBtn.textContent = '×';
+            removeBtn.className = 'remove-btn';
+            removeBtn.addEventListener('click', () => {
+                removeFromWatchlist(buch.id);
+            });
+            li.appendChild(removeBtn);
+            watchlistElement.appendChild(li);
+        }
+    });
 }
 
-    function addToWatchlist(buchId) {
+function addToWatchlist(buchId) {
     if (!watchlist.includes(buchId)) {
-    watchlist.push(buchId);
-    localStorage.setItem('watchlist', JSON.stringify(watchlist));
-    renderWatchlist();
-    renderBuecher();
-}
+        watchlist.push(buchId);
+        localStorage.setItem('watchlist', JSON.stringify(watchlist));
+        renderWatchlist();
+        renderBuecher();
+    }
 }
 
-    function removeFromWatchlist(buchId) {
+function removeFromWatchlist(buchId) {
     watchlist = watchlist.filter(id => id !== buchId);
     localStorage.setItem('watchlist', JSON.stringify(watchlist));
     renderWatchlist();
     renderBuecher();
 }
 
-    document.getElementById('watchlistToggleBtn').addEventListener('click', () => {
+document.getElementById('watchlistToggleBtn').addEventListener('click', () => {
     const watchlistPanel = document.getElementById('watchlistPanel');
     watchlistPanel.style.display = watchlistPanel.style.display === 'block' ? 'none' : 'block';
     renderWatchlist();
 });
 
-    document.addEventListener('click', (e) => {
+document.addEventListener('click', (e) => {
     if (e.target.classList.contains('add-watchlist-btn')) {
-    const buchId = e.target.getAttribute('data-id');
-    if (watchlist.includes(buchId)) {
-    removeFromWatchlist(buchId);
-    e.target.textContent = 'Zur Watchlist hinzufügen';
-} else {
-    addToWatchlist(buchId);
-    e.target.textContent = 'Von Watchlist entfernen';
-}
-}
+        const buchId = e.target.getAttribute('data-id');
+        if (watchlist.includes(buchId)) {
+            removeFromWatchlist(buchId);
+            e.target.textContent = 'Zur Watchlist hinzufügen';
+        } else {
+            addToWatchlist(buchId);
+            e.target.textContent = 'Von Watchlist entfernen';
+        }
+    }
 
     if (e.target.classList.contains('star')) {
-    const buchId = e.target.parentElement.getAttribute('data-id');
-    const rating = parseInt(e.target.getAttribute('data-value'));
-    const buch = buecher.find(b => b.id === buchId);
-    if (buch) {
-    buch.userRating = rating; // Setze die Benutzerbewertung
-    renderBuecher(); // Aktualisiere die Buchkarten
-}
-}
+        const buchId = e.target.parentElement.getAttribute('data-id');
+        const rating = parseInt(e.target.getAttribute('data-value'));
+        const buch = buecher.find(b => b.id === buchId);
+        if (buch) {
+            buch.userRating = rating; // Setze die Benutzerbewertung
+            renderBuecher(); // Aktualisiere die Buchkarten
+        }
+    }
 });
 
-    document.getElementById('addBuchBtn').addEventListener('click', () => {
+document.getElementById('addBuchBtn').addEventListener('click', () => {
     const titelInput = document.getElementById('titelInput').value;
     const bewertungInput = parseFloat(document.getElementById('bewertungInput').value);
     const beschreibungInput = document.getElementById('beschreibungInput').value;
@@ -137,27 +137,31 @@
     const seitenInput = parseInt(document.getElementById('seitenInput').value);
 
     if (titelInput && !isNaN(bewertungInput) && beschreibungInput && bildInput && !isNaN(seitenInput)) {
-    const newBuch = {
-    id: titelInput.toLowerCase().replace(/\s+/g, '-'),
-    titel: titelInput,
-    bewertung: bewertungInput,
-    beschreibung: beschreibungInput,
-    bild: bildInput,
-    seiten: seitenInput,
-    userRating: 0 // Initiale Benutzerbewertung
-};
-    buecher.push(newBuch);
-    renderBuecher();
-    document.getElementById('titelInput').value = '';
-    document.getElementById('bewertungInput').value = '';
-    document.getElementById('beschreibungInput').value = '';
-    document.getElementById('bildInput').value = '';
-    document.getElementById('seitenInput').value = '';
-} else {
-    alert('Bitte fülle alle Felder aus.');
-}
+        const newBuch = {
+            id: titelInput.toLowerCase().replace(/\s+/g, '-'),
+            titel: titelInput,
+            bewertung: bewertungInput,
+            beschreibung: beschreibungInput,
+            bild: bildInput,
+            seiten: seitenInput,
+            userRating: 0 // Initiale Benutzerbewertung
+        };
+        buecher.push(newBuch);
+        renderBuecher();
+        document.getElementById('titelInput').value = '';
+        document.getElementById('bewertungInput').value = '';
+        document.getElementById('beschreibungInput').value = '';
+        document.getElementById('bildInput').value = '';
+        document.getElementById('seitenInput').value = '';
+    } else {
+        alert('Bitte fülle alle Felder aus.');
+    }
 });
 
-    // Initial render
-    renderBuecher();
-    renderWatchlist();
+// Initial render
+renderBuecher();
+renderWatchlist();
+
+
+
+    
