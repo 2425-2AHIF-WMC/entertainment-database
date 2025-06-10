@@ -838,6 +838,41 @@
       color: initial;
       margin-left: 45rem;
     }
+
+    .search-result-card {
+      background: linear-gradient(145deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 10px; /* Abgerundete Ecken */
+      padding: 1rem;
+      text-align: center;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      min-width: 200px; /* Minimale Breite für die Karten */
+      max-width: 250px; /* Maximale Breite für die Karten */
+      margin: 0.5rem; /* Abstand zwischen den Karten */
+    }
+
+    .search-result-card:hover {
+      transform: translateY(-5px); /* Leichte Hebung beim Hover */
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* Schatten beim Hover */
+    }
+
+    .card-title {
+      font-size: 1.2rem; /* Schriftgröße für den Titel */
+      color: #00d4ff; /* Titel in einer auffälligen Farbe */
+    }
+
+    .card-rating {
+      font-size: 1rem; /* Schriftgröße für die Bewertung */
+      color: #b0b0b0; /* Farbe für die Bewertung */
+    }
+
+    .card-description {
+      font-size: 0.9rem; /* Schriftgröße für die Beschreibung */
+      color: #b0b0b0; /* Farbe für die Beschreibung */
+    }
+
   </style>
 </head>
 <body>
@@ -888,12 +923,7 @@
   </nav>
 </header>
 
-<!-- Suchergebnisse -->
-<section class="search-results-section" id="search-results">
-  <div class="results-container" id="results">
-    <!-- Suchergebnisse werden hier angezeigt -->
-  </div>
-</section>
+
 <!-- Login Modal -->
 <div class="login-modal" id="loginModal">
   <div class="login-form">
@@ -922,6 +952,15 @@
     </div>
   </div>
 </div>
+
+<!-- Suchergebnisse -->
+<section class="search-results-section" id="search-results">
+  <div class="results-container" id="results">
+    <!-- Suchergebnisse werden hier angezeigt -->
+  </div>
+</section>
+
+
 
 <section class="hero-section" id="home">
   <div class="hero-content" id="child">
@@ -1357,48 +1396,38 @@
       }, 300);
     }, 3000);
   }
-
-  // Search functionality
-  let allItems = []; // Initialisiere allItems hier
-
   function renderSearchResults(query) {
     const resultsContainer = document.getElementById('results');
     resultsContainer.innerHTML = '';
     const filteredItems = allItems.filter(item => item.titel.toLowerCase().includes(query.toLowerCase()));
 
     if (filteredItems.length === 0) {
-      resultsContainer.innerHTML = '<p>Keine Ergebnisse gefunden.</p>';
+      resultsContainer.innerHTML = '<p class="text-center text-danger">Keine Ergebnisse gefunden.</p>';
       return;
     }
 
     filteredItems.forEach(item => {
       const card = document.createElement('div');
-      card.className = 'card';
+      card.className = 'card search-result-card'; // Neue Klasse für die Suchergebnis-Karten
       card.innerHTML = `
-      <img src="${item.bild}" alt="${item.titel}" />
-      <h3 class="card-title">${item.titel}</h3>
-      <p class="card-rating">Bewertung: ${item.bewertung} ⭐</p>
-      <p class="card-description">${item.beschreibung}</p>
-
-    `;
+            <div class="card-body">
+                <h5 class="card-title">${item.titel}</h5>
+                <p class="card-rating">Bewertung: ${item.bewertung} ⭐</p>
+                <p class="card-description">${item.beschreibung}</p>
+                <button class="add-watchlist-btn btn btn-primary" data-id="${item.id}">${watchlist.includes(item.id) ? 'Von Watchlist entfernen' : 'Zur Watchlist hinzufügen'}</button>
+            </div>
+        `;
       resultsContainer.appendChild(card);
     });
   }
 
-  // Suchfunktion// <button class="card-button">Details</button>
-  document.querySelector('.search-btn').addEventListener('click', () => {
+  // Suchfunktion
+  document.querySelector('.search-input').addEventListener('input', () => {
     const searchTerm = document.querySelector('.search-input').value.trim();
     if (searchTerm) {
       renderSearchResults(searchTerm);
     } else {
-      showAlert('Bitte geben Sie einen Suchbegriff ein', 'error');
-    }
-  });
-
-  // Suche mit der Enter-Taste
-  document.querySelector('.search-input').addEventListener('keypress', (e) => {
-    if (e.key === 'Enter') {
-      document.querySelector('.search-btn').click();
+      document.getElementById('results').innerHTML = ''; // Leere die Ergebnisse, wenn das Suchfeld leer ist
     }
   });
 

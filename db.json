@@ -6,7 +6,7 @@
       "bewertung": 8.8,
       "beschreibung": "Ein Traum im Traum. Ein Meisterwerk von Christopher Nolan, das mit ausgeklügelter Handlung fasziniert.",
       "bild": "https://th.bing.com/th/id/R.69344c61a4a6d287887154402b6ec44c?rik=NSh%2fkMDTJYJN9Q&riu=http%3a%2f%2fimages2.fanpop.com%2fimage%2fphotos%2f14300000%2fInception-inception-2010-14355479-1680-1050.jpg&ehk=d15hpS8Rply6BEkzuLI%2fbahZQFk5IL8MKCn8JQSGv5I%3d&risl=&pid=ImgRaw&r=0",
-      "dauer": 47,
+      "dauer": 148,
       "userRating": 0
     },
     {
@@ -15,7 +15,7 @@
       "bewertung": 9.3,
       "beschreibung": "Ein episches Drama über Hoffnung und Freundschaft im Gefängnis Shawshank.",
       "bild": "https://image.tmdb.org/t/p/w500/q6y0Go1tsGEsmtFryDOJo3dEmqu.jpg",
-      "dauer": 47,
+      "dauer": 142,
       "userRating": 0
     },
     {
@@ -24,7 +24,7 @@
       "bewertung": 9,
       "beschreibung": "Der dunkle Ritter stellt sich dem Chaos in Gotham - mit brillantem Heath Ledger als Joker.",
       "bild": "https://image.tmdb.org/t/p/w500/1hRoyzDtpgMU7Dz4JF22RANzQO7.jpg",
-      "dauer": 47,
+      "dauer": 152,
       "userRating": 0
     },
     {
@@ -33,7 +33,7 @@
       "bewertung": 8.6,
       "beschreibung": "Ein Süd-Koreanischer Thriller über Klassenunterschiede der besonderen Art.",
       "bild": "https://image.tmdb.org/t/p/w500/7IiTTgloJzvGI1TAYymCfbfl3vT.jpg",
-      "dauer": 47,
+      "dauer": 132,
       "userRating": 0
     },
     {
@@ -42,10 +42,236 @@
       "bewertung": 8.6,
       "beschreibung": "Episches Sci-Fi-Drama über eine Reise durch Raum und Zeit, um die Menschheit zu retten.",
       "bild": "https://image.tmdb.org/t/p/w500/rAiYTfKGqDCRIIqo664sY9XZIvQ.jpg",
-      "dauer": 47,
+      "dauer": 169,
+      "userRating": 0
+    },
+    {
+      "id": 6,
+      "titel": "The Godfather",
+      "bewertung": 9.2,
+      "beschreibung": "Die Geschichte der Mafiafamilie Corleone und ihrer Machenschaften.",
+      "bild": "https://upload.wikimedia.org/wikipedia/en/1/1c/Godfather_ver1.jpg",
+      "dauer": 175,
+      "userRating": 0
+    },
+    {
+      "id": 7,
+      "titel": "Pulp Fiction",
+      "bewertung": 8.9,
+      "beschreibung": "Ein Meisterwerk von Quentin Tarantino, das mehrere Geschichten miteinander verwebt.",
+      "bild": "https://upload.wikimedia.org/wikipedia/en/8/82/Pulp_Fiction_cover.jpg",
+      "dauer": 154,
+      "userRating": 0
+    },
+    {
+      "id": 8,
+      "titel": "Forrest Gump",
+      "bewertung": 8.8,
+      "beschreibung": "Die bewegende Geschichte eines Mannes, der die Geschichte Amerikas beeinflusst.",
+      "bild": "https://upload.wikimedia.org/wikipedia/en/6/67/Forrest_Gump_poster.jpg",
+      "dauer": 142,
+      "userRating": 0
+    },
+    {
+      "id": 9,
+      "titel": "The Matrix",
+      "bewertung": 8.7,
+      "beschreibung": "Ein Hacker entdeckt die wahre Natur der Realität und seine Rolle im Krieg gegen die Maschinen.",
+      "bild": "https://upload.wikimedia.org/wikipedia/en/c/c1/The_Matrix_Poster.jpg",
+      "dauer": 136,
+      "userRating": 0
+    },
+    {
+      "id": 10,
+      "titel": "Fight Club",
+      "bewertung": 8.8,
+      "beschreibung": "Ein unzufriedener Büroangestellter gründet einen geheimen Kampfclub.",
+      "bild": "https://upload.wikimedia.org/wikipedia/en/8/81/Fight_Club_poster.jpg",
+      "dauer": 139,
+      "userRating": 0
+    },
+    {
+      "id": 11,
+      "titel": "The Silence of the Lambs",
+      "bewertung": 8.6,
+      "beschreibung": "Eine FBI-Agentin sucht die Hilfe eines inhaftierten Serienmörders, um einen anderen zu fangen.",
+      "bild": "https://upload.wikimedia.org/wikipedia/en/6/68/Thesilenceofthelambs.jpg",
+      "dauer": 118,
+      "userRating": 0
+    },
+    {
+      "id": 12,
+      "titel": "Gladiator",
+      "bewertung": 8.5,
+      "beschreibung": "Ein römischer General wird zum Sklaven und kämpft um seine Freiheit.",
+      "bild": "https://upload.wikimedia.org/wikipedia/en/8/8d/Gladiator_ver1.jpg",
+      "dauer": 155,
+      "userRating": 0
+    },
+    {
+      "id": 13,
+      "titel": "The Departed",
+      "bewertung": 8.5,
+      "beschreibung": "Ein Undercover-Cop und ein Maulwurf in der Polizei versuchen, sich gegenseitig zu entlarven.",
+      "bild": "https://upload.wikimedia.org/wikipedia/en/5/5c/The_Departed_Poster.jpg",
+      "dauer": 151,
+      "userRating": 0
+    },
+    {
+      "id": 14,
+      "titel": "The Social Network",
+      "bewertung": 7.7,
+      "beschreibung": "Die Geschichte von Mark Zuckerberg und der Gründung von Facebook.",
+      "bild": "https://upload.wikimedia.org/wikipedia/en/7/7c/The_Social_Network.jpg",
+      "dauer": 120,
+      "userRating": 0
+    },
+    {
+      "id": 15,
+      "titel": "The Lion King",
+      "bewertung": 8.5,
+      "beschreibung": "Ein junger Löwe muss seinen Platz im Kreislauf des Lebens finden.",
+      "bild": "https://upload.wikimedia.org/wikipedia/en/3/3d/TheLionKing1994.jpg",
+      "dauer": 88,
+      "userRating": 0
+    },
+    {
+      "id": 16,
+      "titel": "Avatar",
+      "bewertung": 7.8,
+      "beschreibung": "Ein Ex-Marine wird in eine fremde Welt eingeführt und kämpft um deren Zukunft.",
+      "bild": "https://upload.wikimedia.org/wikipedia/en/b/b9/Avatar-Teaser-Poster.jpg",
+      "dauer": 162,
+      "userRating": 0
+    },
+    {
+      "id": 17,
+      "titel": "The Avengers",
+      "bewertung": 8.0,
+      "beschreibung": "Eine Gruppe von Superhelden vereint sich, um die Welt zu retten.",
+      "bild": "https://upload.wikimedia.org/wikipedia/en/0/0c/TheAvengers2012Poster.jpg",
+      "dauer": 143,
+      "userRating": 0
+    },
+    {
+      "id": 18,
+      "titel": "Jurassic Park",
+      "bewertung": 8.1,
+      "beschreibung": "Ein Freizeitpark mit lebenden Dinosauriern gerät außer Kontrolle.",
+      "bild": "https://upload.wikimedia.org/wikipedia/en/e/e7/Jurassic_Park_poster.jpg",
+      "dauer": 127,
+      "userRating": 0
+    },
+    {
+      "id": 19,
+      "titel": "The Prestige",
+      "bewertung": 8.5,
+      "beschreibung": "Zwei Magier kämpfen um die Vorherrschaft in der Welt der Illusionen.",
+      "bild": "https://upload.wikimedia.org/wikipedia/en/8/8b/The_Prestige_Poster.jpg",
+      "dauer": 130,
+      "userRating": 0
+    },
+    {
+      "id": 20,
+      "titel": "The Green Mile",
+      "bewertung": 8.6,
+      "beschreibung": "Ein Gefängniswärter entdeckt die übernatürlichen Fähigkeiten eines Insassen.",
+      "bild": "https://upload.wikimedia.org/wikipedia/en/6/60/The_Green_Mile_poster.jpg",
+      "dauer": 189,
+      "userRating": 0
+    },
+    {
+      "id": 21,
+      "titel": "The Intouchables",
+      "bewertung": 8.5,
+      "beschreibung": "Die wahre Geschichte einer ungewöhnlichen Freundschaft zwischen einem Querschnittsgelähmten und seinem Pfleger.",
+      "bild": "https://upload.wikimedia.org/wikipedia/en/9/9e/The_Intouchables.jpg",
+      "dauer": 112,
+      "userRating": 0
+    },
+    {
+      "id": 22,
+      "titel": "The Wolf of Wall Street",
+      "bewertung": 8.2,
+      "beschreibung": "Die Geschichte eines Börsenmaklers, der in die Welt des Betrugs und der Korruption eintaucht.",
+      "bild": "https://upload.wikimedia.org/wikipedia/en/1/1e/The_Wolf_of_Wall_Street_poster.jpg",
+      "dauer": 180,
+      "userRating": 0
+    },
+    {
+      "id": 23,
+      "titel": "The Shape of Water",
+      "bewertung": 7.3,
+      "beschreibung": "Eine ungewöhnliche Liebesgeschichte zwischen einer stummen Frau und einem amphibischen Wesen.",
+      "bild": "https://upload.wikimedia.org/wikipedia/en/3/3e/The_Shape_of_Water_poster.jpg",
+      "dauer": 123,
+      "userRating": 0
+    },
+    {
+      "id": 24,
+      "titel": "La La Land",
+      "bewertung": 8.0,
+      "beschreibung": "Eine musikalische Hommage an Los Angeles und die Träume, die dort geboren werden.",
+      "bild": "https://upload.wikimedia.org/wikipedia/en/a/a6/La_La_Land_poster.jpg",
+      "dauer": 128,
+      "userRating": 0
+    },
+    {
+      "id": 25,
+      "titel": "Mad Max: Fury Road",
+      "bewertung": 8.1,
+      "beschreibung": "In einer post-apokalyptischen Welt kämpft eine Gruppe um das Überleben.",
+      "bild": "https://upload.wikimedia.org/wikipedia/en/6/6e/Mad_Max_Fury_Road.jpg",
+      "dauer": 120,
+      "userRating": 0
+    },
+    {
+      "id": 26,
+      "titel": "The Greatest Showman",
+      "bewertung": 7.6,
+      "beschreibung": "Die Geschichte von P.T. Barnum und der Gründung des Zirkus.",
+      "bild": "https://upload.wikimedia.org/wikipedia/en/3/3e/The_Greatest_Showman_poster.jpg",
+      "dauer": 105,
+      "userRating": 0
+    },
+    {
+      "id": 27,
+      "titel": "Coco",
+      "bewertung": 8.4,
+      "beschreibung": "Ein Junge begibt sich auf eine Reise ins Land der Toten, um seine Familie zu finden.",
+      "bild": "https://upload.wikimedia.org/wikipedia/en/6/6e/Coco_poster.jpg",
+      "dauer": 105,
+      "userRating": 0
+    },
+    {
+      "id": 28,
+      "titel": "Inside Out",
+      "bewertung": 8.1,
+      "beschreibung": "Die Emotionen eines Mädchens kämpfen um die Kontrolle über ihr Leben.",
+      "bild": "https://upload.wikimedia.org/wikipedia/en/6/6e/Inside_Out_poster.jpg",
+      "dauer": 95,
+      "userRating": 0
+    },
+    {
+      "id": 29,
+      "titel": "Zootopia",
+      "bewertung": 8.0,
+      "beschreibung": "In einer Stadt voller Tiere muss eine Häsin einen Fall lösen.",
+      "bild": "https://upload.wikimedia.org/wikipedia/en/9/9e/Zootopia.jpg",
+      "dauer": 108,
+      "userRating": 0
+    },
+    {
+      "id": 30,
+      "titel": "Toy Story",
+      "bewertung": 8.3,
+      "beschreibung": "Die Abenteuer von Spielzeugen, die zum Leben erwachen, wenn Menschen nicht hinschauen.",
+      "bild": "https://upload.wikimedia.org/wikipedia/en/1/13/Toy_Story.jpg",
+      "dauer": 81,
       "userRating": 0
     }
   ],
+
   "buecher": [
     {
       "id": "a1",
@@ -82,9 +308,244 @@
       "bild": "https://images-na.ssl-images-amazon.com/images/I/81Au2daGvjL.jpg",
       "seiten": 200,
       "userRating": 0
+    },
+    {
+      "id": "a5",
+      "titel": "Der Prozess",
+      "bewertung": 8.4,
+      "beschreibung": "Franz Kafkas Roman über einen Mann, der ohne Grund verhaftet wird.",
+      "bild": "https://images-na.ssl-images-amazon.com/images/I/81c1g1g1g1L.jpg",
+      "seiten": 300,
+      "userRating": 0
+    },
+    {
+      "id": "a6",
+      "titel": "Die Verwandlung",
+      "bewertung": 8.1,
+      "beschreibung": "Die Geschichte von Gregor Samsa, der sich eines Morgens in ein Ungeziefer verwandelt.",
+      "bild": "https://images-na.ssl-images-amazon.com/images/I/81c1g1g1g1L.jpg",
+      "seiten": 150,
+      "userRating": 0
+    },
+    {
+      "id": "a7",
+      "titel": "Der Steppenwolf",
+      "bewertung": 8.3,
+      "beschreibung": "Ein Roman von Hermann Hesse über die innere Zerrissenheit eines Mannes.",
+      "bild": "https://images-na.ssl-images-amazon.com/images/I/81c1g1g1g1L.jpg",
+      "seiten": 250,
+      "userRating": 0
+    },
+    {
+      "id": "a8",
+      "titel": "Die unendliche Geschichte",
+      "bewertung": 9.0,
+      "beschreibung": "Ein fantastisches Abenteuer von Michael Ende.",
+      "bild": "https://images-na.ssl-images-amazon.com/images/I/81c1g1g1g1L.jpg",
+      "seiten": 400,
+      "userRating": 0
+    },
+    {
+      "id": "a9",
+      "titel": "Der kleine Prinz",
+      "bewertung": 9.2,
+      "beschreibung": "Ein zeitloses Märchen von Antoine de Saint-Exupéry.",
+      "bild": "https://images-na.ssl-images-amazon.com/images/I/81c1g1g1g1L.jpg",
+      "seiten": 100,
+      "userRating": 0
+    },
+    {
+      "id": "a10",
+      "titel": "Die Physiker",
+      "bewertung": 8.7,
+      "beschreibung": "Ein Theaterstück von Friedrich Dürrenmatt über Wissenschaft und Verantwortung.",
+      "bild": "https://images-na.ssl-images-amazon.com/images/I/81c1g1g1g1L.jpg",
+      "seiten": 200,
+      "userRating": 0
+    },
+    {
+      "id": "a11",
+      "titel": "Die Entdeckung der Langsamkeit",
+      "bewertung": 8.5,
+      "beschreibung": "Ein Roman von Sten Nadolny über die Zeit und das Leben.",
+      "bild": "https://images-na.ssl-images-amazon.com/images/I/81c1g1g1g1L.jpg",
+      "seiten": 300,
+      "userRating": 0
+    },
+    {
+      "id": "a12",
+      "titel": "Der Schatten des Windes",
+      "bewertung": 9.0,
+      "beschreibung": "Ein geheimnisvoller Roman von Carlos Ruiz Zafón über Bücher und ihre Macht.",
+      "bild": "https://images-na.ssl-images-amazon.com/images/I/81c1g1g1g1L.jpg",
+      "seiten": 400,
+      "userRating": 0
+    },
+    {
+      "id": "a13",
+      "titel": "Die Säulen der Erde",
+      "bewertung": 8.9,
+      "beschreibung": "Ein historischer Roman von Ken Follett über den Bau einer Kathedrale im Mittelalter.",
+      "bild": "https://images-na.ssl-images-amazon.com/images/I/81c1g1g1g1L.jpg",
+      "seiten": 1000,
+      "userRating": 0
+    },
+    {
+      "id": "a14",
+      "titel": "Die Entführung",
+      "bewertung": 8.0,
+      "beschreibung": "Ein spannender Krimi von Charlotte Link.",
+      "bild": "https://images-na.ssl-images-amazon.com/images/I/81c1g1g1g1L.jpg",
+      "seiten": 400,
+      "userRating": 0
+    },
+    {
+      "id": "a15",
+      "titel": "Die Wand",
+      "bewertung": 8.4,
+      "beschreibung": "Ein Roman von Marlen Haushofer über Isolation und Selbstfindung.",
+      "bild": "https://images-na.ssl-images-amazon.com/images/I/81c1g1g1g1L.jpg",
+      "seiten": 200,
+      "userRating": 0
+    },
+    {
+      "id": "a16",
+      "titel": "Die Känguru-Chroniken",
+      "bewertung": 8.5,
+      "beschreibung": "Eine humorvolle Erzählung von Marc-Uwe Kling über ein Känguru und seinen Mitbewohner.",
+      "bild": "https://images-na.ssl-images-amazon.com/images/I/81c1g1g1g1L.jpg",
+      "seiten": 300,
+      "userRating": 0
+    },
+    {
+      "id": "a17",
+      "titel": "Der Medicus",
+      "bewertung": 8.6,
+      "beschreibung": "Ein historischer Roman von Noah Gordon über einen Arzt im Mittelalter.",
+      "bild": "https://images-na.ssl-images-amazon.com/images/I/81c1g1g1g1L.jpg",
+      "seiten": 600,
+      "userRating": 0
+    },
+    {
+      "id": "a18",
+      "titel": "Die Vermessung der Welt",
+      "bewertung": 8.8,
+      "beschreibung": "Ein Roman von Daniel Kehlmann über die Lebenswege von Gauß und Humboldt.",
+      "bild": "https://images-na.ssl-images-amazon.com/images/I/81c1g1g1g1L.jpg",
+      "seiten": 300,
+      "userRating": 0
+    },
+    {
+      "id": "a19",
+      "titel": "Die Unendliche Geschichte",
+      "bewertung": 9.1,
+      "beschreibung": "Ein fantastisches Abenteuer von Michael Ende über die Macht der Fantasie.",
+      "bild": "https://images-na.ssl-images-amazon.com/images/I/81c1g1g1g1L.jpg",
+      "seiten": 400,
+      "userRating": 0
+    },
+    {
+      "id": "a20",
+      "titel": "Die Päpstin",
+      "bewertung": 8.7,
+      "beschreibung": "Ein historischer Roman von Donna W. Cross über eine Frau, die als Mann verkleidet Papst wird.",
+      "bild": "https://images-na.ssl-images-amazon.com/images/I/81c1g1g1g1L.jpg",
+      "seiten": 500,
+      "userRating": 0
+    },
+    {
+      "id": "a21",
+      "titel": "Die Geschichte der Bienen",
+      "bewertung": 8.5,
+      "beschreibung": "Ein Roman von Maja Lunde über die Bedeutung der Bienen für die Menschheit.",
+      "bild": "https://images-na.ssl-images-amazon.com/images/I/81c1g1g1g1L.jpg",
+      "seiten": 400,
+      "userRating": 0
+    },
+    {
+      "id": "a22",
+      "titel": "Die Nachtigall",
+      "bewertung": 9.0,
+      "beschreibung": "Ein bewegender Roman von Kristin Hannah über den Zweiten Weltkrieg.",
+      "bild": "https://images-na.ssl-images-amazon.com/images/I/81c1g1g1g1L.jpg",
+      "seiten": 400,
+      "userRating": 0
+    },
+    {
+      "id": "a23",
+      "titel": "Die Farbe Lila",
+      "bewertung": 8.9,
+      "beschreibung": "Ein Roman von Alice Walker über Rassismus und Frauenrechte.",
+      "bild": "https://images-na.ssl-images-amazon.com/images/I/81c1g1g1g1L.jpg",
+      "seiten": 300,
+      "userRating": 0
+    },
+    {
+      "id": "a24",
+      "titel": "Die Entführung",
+      "bewertung": 8.0,
+      "beschreibung": "Ein spannender Krimi von Charlotte Link.",
+      "bild": "https://images-na.ssl-images-amazon.com/images/I/81c1g1g1g1L.jpg",
+      "seiten": 400,
+      "userRating": 0
+    },
+    {
+      "id": "a25",
+      "titel": "Die Wand",
+      "bewertung": 8.4,
+      "beschreibung": "Ein Roman von Marlen Haushofer über Isolation und Selbstfindung.",
+      "bild": "https://images-na.ssl-images-amazon.com/images/I/81c1g1g1g1L.jpg",
+      "seiten": 200,
+      "userRating": 0
+    },
+    {
+      "id": "a26",
+      "titel": "Die Känguru-Chroniken",
+      "bewertung": 8.5,
+      "beschreibung": "Eine humorvolle Erzählung von Marc-Uwe Kling über ein Känguru und seinen Mitbewohner.",
+      "bild": "https://images-na.ssl-images-amazon.com/images/I/81c1g1g1g1L.jpg",
+      "seiten": 300,
+      "userRating": 0
+    },
+    {
+      "id": "a27",
+      "titel": "Der Medicus",
+      "bewertung": 8.6,
+      "beschreibung": "Ein historischer Roman von Noah Gordon über einen Arzt im Mittelalter.",
+      "bild": "https://images-na.ssl-images-amazon.com/images/I/81c1g1g1g1L.jpg",
+      "seiten": 600,
+      "userRating": 0
+    },
+    {
+      "id": "a28",
+      "titel": "Die Vermessung der Welt",
+      "bewertung": 8.8,
+      "beschreibung": "Ein Roman von Daniel Kehlmann über die Lebenswege von Gauß und Humboldt.",
+      "bild": "https://images-na.ssl-images-amazon.com/images/I/81c1g1g1g1L.jpg",
+      "seiten": 300,
+      "userRating": 0
+    },
+    {
+      "id": "a29",
+      "titel": "Die Unendliche Geschichte",
+      "bewertung": 9.1,
+      "beschreibung": "Ein fantastisches Abenteuer von Michael Ende über die Macht der Fantasie.",
+      "bild": "https://images-na.ssl-images-amazon.com/images/I/81c1g1g1g1L.jpg",
+      "seiten": 400,
+      "userRating": 0
+    },
+    {
+      "id": "a30",
+      "titel": "Die Päpstin",
+      "bewertung": 8.7,
+      "beschreibung": "Ein historischer Roman von Donna W. Cross über eine Frau, die als Mann verkleidet Papst wird.",
+      "bild": "https://images-na.ssl-images-amazon.com/images/I/81c1g1g1g1L.jpg",
+      "seiten": 500,
+      "userRating": 0
     }
   ],
-  "serien": [
+
+"serien": [
     {
       "id": "s1",
       "titel": "Breaking Bad",

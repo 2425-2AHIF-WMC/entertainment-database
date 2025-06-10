@@ -196,6 +196,30 @@ function filterAndRender(query) {
 renderBuecher();
 renderWatchlist();
 
+// Optional: Add more bubbles dynamically
+function createBubble() {
+    const bubble = document.createElement('div');
+    bubble.classList.add('bubble');
 
+    const size = Math.random() * 30 + 15; // Random size between 15-45px
+    bubble.style.width = size + 'px';
+    bubble.style.height = size + 'px';
+    bubble.style.left = Math.random() * 100 + '%';
+    bubble.style.animationDuration = (Math.random() * 8 + 10) + 's'; // Random duration 10-18s
+    bubble.style.animationDelay = Math.random() * 5 + 's';
+
+    document.querySelector('.bubble-container').appendChild(bubble);
+
+    // Remove bubble after animation
+    setTimeout(() => {
+        bubble.remove();
+    }, 20000);
+}
+
+// Create new bubbles every few seconds
+setInterval(createBubble, 3000);
+let currentUser  = null;
+let isLoginMode = true;
+let appData = null;
 
 
