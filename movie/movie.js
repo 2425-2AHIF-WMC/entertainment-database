@@ -49,7 +49,6 @@ const defaultFilme = [
 let filme = [...defaultFilme];
 let watchlist = JSON.parse(localStorage.getItem('watchlist')) || [];
 
-
 // Funktion zum Rendern der Filme
 function renderFilme() {
     const filmList = document.getElementById('film-list');

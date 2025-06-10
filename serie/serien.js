@@ -29,7 +29,7 @@ const defaultSerien = [
     }
 ];
 
-let serien = [...defaultSerien];
+let serien = JSON.parse(localStorage.getItem('serien')) || [...defaultSerien];
 let watchlist = JSON.parse(localStorage.getItem('watchlist')) || [];
 
 function renderSerien() {
